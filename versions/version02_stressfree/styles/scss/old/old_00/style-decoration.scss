@@ -1,0 +1,162 @@
+$purple:#851c7a;
+$device-iphone:"only screen and (max-width : 420px)";
+
+html {
+  font-size: 10.5px;
+}
+
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left:0;
+}
+
+a {
+  text-decoration:none !important;
+  color: black;
+}
+
+.header-container {
+  background-color:$purple;
+  color: white;
+
+  h1 {
+    font-weight: 300;
+
+    span {
+      display: block;
+      line-height:1.2;
+    }
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+}
+
+.navigation-container {
+  background-color:white;
+
+  a {
+    position:relative;
+    left:20px;
+  }
+
+  a::before {
+    position:absolute;
+    top:6px;
+    left:-20px;
+    content: "";
+    padding-left:0px;
+    padding-bottom:2rem;
+    -webkit-transition:padding ease-in .3s;
+    transition:padding ease .3s;
+  }
+
+  a:hover:before {
+    content: "";
+    background-color:$purple;
+    padding-left:8px;
+  }
+
+}
+
+.main-container {
+  #contacts {
+  }
+}
+
+@media #{$device-iphone} {
+  .header-container{
+    padding-left:15% !important;
+    padding-top:5% !important;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .navigation-container {
+    padding-left:15% !important;
+    padding-top:5%;
+
+    a {    
+      font-size: 3rem;
+      font-weight: 300;
+    }
+  }
+
+  .main-container {
+
+    background-color:whitesmoke !important;
+
+    .mobilebtn {
+      font-size:3rem;
+    }
+
+    #work {
+      padding:12%;
+      padding-top:17%;
+
+      li {
+        margin-bottom: 5%;
+        padding:5% !important;
+
+        img {
+          width: 75%;
+        }
+      }
+    }
+
+    #aboutme {
+      padding:12%;
+      padding-top:17%;
+      
+      figure {
+        margin-bottom:20%;
+      }
+
+      img {
+        width: 75%;
+      }
+
+      p {
+        font-size:1.2em;
+        margin-bottom: 13%;
+      }
+    }
+
+    #contacts {
+      padding:12%;
+      padding-top:17%;
+
+      h2, p {
+        margin-bottom: 13%;
+      }
+
+      p {
+        font-size:1.3em;
+      }
+
+      li {
+        margin-bottom: 3% !important;
+      }
+
+      li a {
+        font-size:2.3rem !important;
+      }
+
+      li i {
+        margin-right:20px;
+      }
+    }
+  }
+
+}

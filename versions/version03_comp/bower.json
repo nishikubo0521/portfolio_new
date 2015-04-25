@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "0.0.0",
+  "authors": [
+    "naoki <nishikubo0521@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jquery-pjax": "~1.9.6",
+    "pjax": "~0.2.1",
+    "jquery-ui": "jquery/jquery-ui#1.11.4"
+  }
+}

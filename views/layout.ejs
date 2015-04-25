@@ -3,90 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale= 1.0">
-  <title>WEB DEVELOPER / NAOKI NISHIKUBO / PORTFOLIO</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NAOKI NISHIKUBO / WEB DEVELOPER / PORTFOLIO</title>
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Jura:500,400,300,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/css/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="styles/css/core.css">
+  <link rel="stylesheet" type="text/css" href="styles/css/layout.css">
+</script>
 </head>
 <body>
   <div class="wrapper">
-    <div class="container header-container" id="">
-      <header>
-        <h1>NAOKI NISHIUBO'S PORTFOLIO</h1>
-        <h2>web developer / designer</h2>
-      </header>
-    </div>
-    <div class="container navigation-container">
-      <nav>
-        <ul>
-          <li><a id="ajaxtest"href="/test">Test Link</a></li>
+    <div class="wrapper-l">
+      <div class="header-container">
+        <header>
+          <h1><span>Naoki</span><span>Nishikubo's</span><span>Portfolio</span></h1>
+          <h2>web developer / designer</h2>
+        </header>  
+      </div>
+      <div class="navigation-container">
+        <nav>
+          <ul>
+          <li><a id="ajaxtest" href="/test">Test Link</a></li>
           <li><a id="ajaxtest2" href="test2">Test2 Link</a></li>
-          <li><a class="btn-to-home" href="">home</a></li>
+          <li><a id="ajaxtest3" data-val="val1" href="/test">Test Link</a></li>
+          <li><button id="btn">Button</button></li>
+          <li id="pjax" class="result"></li>
+
+          <li><a class="btn-to-home selected">home</a></li>
           <li><a class="btn-to-section" data-section-id="#work">work</a></li>
           <li><a class="btn-to-section" data-section-id="#aboutme">about me</a></li>
           <li><a class="btn-to-section" data-section-id="#contacts">contacts</a></li>
-          <li><button id="btn">Button</button></li>
-          <li id="pjax"></li>
-        </ul>
-      </nav>
+        </ul
+        </nav>
+      </div>
     </div>
-    <div class="container main-container" id="">
-      <main>
-        <i class="ion-ios-close-outline btn-to-home mobilebtn"></i>
-        <section id="work">
-          <ul>
-            <li>
-              <figure>
-                <figcaption>CHLOE ULIS</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <figcaption>BCIT HTP</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <figcaption>PREVIOUS PORTFOLIO</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <figcaption>JQUERY TUTORIAL</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <figcaption>RESPONSIVE SITE</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <figcaption>COMING SOON</figcaption>
-              </figure>
-            </li>
-          </ul>
-        </section>
-        <section id="aboutme">
-          <figure>
-            <img src="">
-          </figure>
-          <p>Hi, I am Naoki Nishikubo. I am a web developer who came from a physics and engineering field to seek undiscovered laws of Web. I believe that good design more comes from logic than a sense of graphic, as well as that good work more comes from heart than skills.</p>
-        </section>
-        <section id="contacts">
-          <h2>Thank You for Comming to My Website!</h2>
-          <p>I would love to hear any of your response. Please email me if you have some projects you want to work on with me. You can also connect on the following social media. </p>
-          <ul>
-            <li><a href=""><i></i><span>linkein</span></a></li>
-            <li><a href=""><i></i></a><span>twitter</span></li>
-            <li><a href=""><i></i></a><span>email</span></li>
-          </ul>
-        </section>
-      </main>
+
+    <i class="ion-ios-close-outline btn-to-home closebtn"></i>
+
+    <div class="wrapper-r">
+      <div class="main-container">
+        <main>
+          <section id="work" class="row">
+            <h1 class="text-center">MY WORK</h1>
+            <ul>
+              <% projects.forEach(function(project){ %>
+                <li class="col-xs-12 col-sm-6 col-md-4">
+                  <figure>
+                    <a href="<%= project.url %>" target="_blank">
+                      <img src="<%= project.thumbnail %>" alt="<%= project.alt %>" class="img-responsive center-block">
+                      <figcaption class="text-center"><%= project.name %></figcaption>
+                    </a>
+                  </figure>
+                </li>
+              <%  }) %>
+            </ul>
+          </section>
+
+          <section id="aboutme">
+            <h1 class="text-center">ABOUT ME</h1>
+            <figure>
+              <img src="images/naokinishikubo.png" class="img-responsive center-block">
+            </figure>
+            <p>Hi, my name is Naoki Nishikubo. I am a front-end web developer / designer from Vancouver. I received my certification as a Technical Web Designer from BCIT, where the program I was engaged in gave me the confidence to excel in this field. I am an enthusiast of <strong>Javascript</strong>, especially <strong>jQuery</strong> and <strong>Angular.js</strong>.</p>
+
+            <p>I am ever in the pursuit of the highest quality code possible. I love the process of debugging and optimizing while being insane. However, I am at my happiest when collaborating with people who are as passionate as I am when it comes to creating awesome things.</p>
+          </section>
+          
+          <section id="contacts">
+            <h1>Thank You for Coming to My Website!</h1>
+            <p>I would love to hear from you. If you are interested in working with me, please email me. You can also connect with the following social media.</p>
+            <ul>
+              <li><a href="mailto:nishikubo0521@gmail.com" class="email"><i class="ion-android-mail"></i><span>email</span></a></li>
+              <li><a href="https://twitter.com/nnnaoteru" class="twitter"><i class="ion-social-twitter"></i><span>twitter</span></a></li>
+              <li><a href="http://ca.linkedin.com/pub/naoki-nishikubo/a4/929/bba" class="linkedin"><i class="ion-social-linkedin"></i><span>linkedin</span></a></li>
+            </ul>
+          </section>
+        </main>
+      </div>
     </div>
   </div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="scripts/jquery.pjax.min.js"></script>
+<script charset="utf-8" src="scripts/jquery.pjax.min.js"></script>
 <script src="scripts/script.js"></script>
+<script src="scripts/ajax.js"></script>
+<script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
+<script>
+window.onload = function() {
+    //baseliner = new Baseliner();
+}
+</script>
 </body>
 </html>

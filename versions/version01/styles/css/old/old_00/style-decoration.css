@@ -1,0 +1,128 @@
+html {
+  font-size: 10.5px;
+}
+
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+.header-container {
+  background-color: #851c7a;
+  color: white;
+}
+.header-container h1 {
+  font-weight: 300;
+}
+.header-container h1 span {
+  display: block;
+  line-height: 1.2;
+}
+.header-container h2 {
+  font-weight: 300;
+}
+
+.navigation-container {
+  background-color: white;
+}
+.navigation-container a {
+  position: relative;
+  left: 20px;
+}
+.navigation-container a::before {
+  position: absolute;
+  top: 6px;
+  left: -20px;
+  content: "";
+  padding-left: 0px;
+  padding-bottom: 2rem;
+  -webkit-transition: padding ease-in .3s;
+  transition: padding ease .3s;
+}
+.navigation-container a:hover:before {
+  content: "";
+  background-color: #851c7a;
+  padding-left: 8px;
+}
+
+@media only screen and (max-width: 420px) {
+  .header-container {
+    padding-left: 15% !important;
+    padding-top: 5% !important;
+  }
+  .header-container h1 {
+    font-size: 4rem;
+  }
+  .header-container h2 {
+    font-size: 2rem;
+  }
+
+  .navigation-container {
+    padding-left: 15% !important;
+    padding-top: 5%;
+  }
+  .navigation-container a {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  .main-container {
+    background-color: whitesmoke !important;
+  }
+  .main-container .mobilebtn {
+    font-size: 3rem;
+  }
+  .main-container #work {
+    padding: 12%;
+    padding-top: 17%;
+  }
+  .main-container #work li {
+    margin-bottom: 5%;
+    padding: 5% !important;
+  }
+  .main-container #work li img {
+    width: 75%;
+  }
+  .main-container #aboutme {
+    padding: 12%;
+    padding-top: 17%;
+  }
+  .main-container #aboutme figure {
+    margin-bottom: 20%;
+  }
+  .main-container #aboutme img {
+    width: 75%;
+  }
+  .main-container #aboutme p {
+    font-size: 1.2em;
+    margin-bottom: 13%;
+  }
+  .main-container #contacts {
+    padding: 12%;
+    padding-top: 17%;
+  }
+  .main-container #contacts h2, .main-container #contacts p {
+    margin-bottom: 13%;
+  }
+  .main-container #contacts p {
+    font-size: 1.3em;
+  }
+  .main-container #contacts li {
+    margin-bottom: 3% !important;
+  }
+  .main-container #contacts li a {
+    font-size: 2.3rem !important;
+  }
+  .main-container #contacts li i {
+    margin-right: 20px;
+  }
+}
