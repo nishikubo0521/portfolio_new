@@ -1,14 +1,5 @@
 (function(){
-  // Add this Later
-  /*
-  console.log($.pjax);
-  $.pjax({
-    link:'a#ajaxtest, a#ajaxtest2',
-    area: '#pjax'
-  });
-  */
-
-  //
+  
   var $btnToSection = $(".btn-to-section"); //nav links have this class
   var $wrapperLR = $('.wrapper-l, .wrapper-r'); // that wrap header, navigation, and main container
   var $section = $('section');

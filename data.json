@@ -18,7 +18,7 @@
       "thumbnail" : "public/images/thumnails/thumbnail-bcit-htp.png",
       "alt" : "BCIT High-Tech Professional Programs",
       "image" : "public/images/large/bcit_high_tech_professional_large.png",
-      "discription" : ""
+      "discription" : "This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5 syntax, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
     },
 
     {
@@ -28,7 +28,7 @@
       "thumbnail" : "public/images/thumnails/thumbnail-previous-portfolio.png",
       "alt" : "Previous Portfolio",
       "image" : "public/images/large/",
-      "discription" : ""
+      "discription" : "This is my previous portfolio site built with HTML5 and CSS3 which I made simple for users to browse all contents quickly. I focuesd on selecting best fonts and colors cosulting 2 excellent designers"
     },
 
     {
