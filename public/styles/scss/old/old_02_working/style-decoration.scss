@@ -1,0 +1,416 @@
+$purple:#851c7a;
+$whitepurple: #e57cda;
+$device-iphone:"only screen and (min-width : 420px)";
+$device-ipad:"only screen and (min-width : 768px)";
+$device-desktop: "only screen and (min-width : 892px)";
+
+html {
+  font-size: 10.5px;
+}
+
+body {
+  font-family: 'Jura', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding-left:0;
+}
+
+a {
+  text-decoration:none !important;
+  font-weight: 300;
+  color: black;
+}
+
+.closebtn {
+  font-size:3rem;
+}
+
+.header-container{
+  padding:9% 15%;
+  background-color:$purple;
+  color: white;
+
+  h1 {
+    margin-top:0;
+    font-size: 4rem;
+    font-weight: 300;
+    span {
+      display: block;
+      line-height:1.2;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+}
+
+.navigation-container {
+  background-color:white;
+  padding-left:15%;
+  padding-top:9%;
+
+  a {    
+    font-size: 2.5rem;
+    position:relative;
+    left:20px;
+    cursor:pointer;
+  }
+
+  a::before {
+    position:absolute;
+    top:3px;
+    left:-20px;
+    content: "";
+    padding-left:0px;
+    padding-bottom:2rem;
+    -webkit-transition:padding ease-in .3s;
+    transition:padding ease .3s;
+  }
+
+  a:hover:before,
+  a.selected:before {
+    content: "";
+    background-color:$purple;
+    padding-left:8px;
+  }
+
+  li {
+    margin-bottom: 3%;
+  }
+}
+
+.main-container {
+
+  background-color:whitesmoke;
+
+  #work {
+    padding:12%;
+    padding-top:17%;
+
+    li {
+      margin-bottom: 5%;
+      padding:5% !important;
+
+      figure{
+        background-color:white;
+        padding-top:10% !important;
+        padding-bottom:5% !important;
+
+        figcaption{
+          margin-top: 5%;
+          color: slategray;
+          font-size: 2rem;
+        }
+      }
+
+      figure:hover{
+        -webkit-transition: background-color ease .5s;
+        transition: background-color ease .5s;
+        background-color: orange;
+
+        figcaption{
+          -webkit-transition: color ease .5s;
+          transition: color ease .5s;
+          color:white;
+        }
+      }
+
+      img {
+        width: 75%;
+      }
+    }
+  }
+
+  #aboutme {
+    padding:12%;
+    padding-top:17%;
+    
+    figure {
+      margin-bottom:20%;
+    }
+
+    img {
+      width: 75%;
+    }
+
+    p {
+      font-size:1.2em;
+      margin-bottom: 13%;
+    }
+  }
+
+  #contacts {
+    padding:12%;
+    padding-top:17%;
+
+    h2, p {
+      margin-bottom: 13%;
+    }
+
+    p {
+      font-size:1.3em;
+    }
+
+    li {
+      margin-bottom: 3% !important;
+    }
+
+    li a {
+      font-size:2.3rem !important;
+    }
+
+    li i {
+      margin-right:20px;
+    }
+  }
+}
+/*
+* Animation Styling
+*/
+.navigation-container {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.main-on .navigation-container{
+  background-color: $purple;
+
+  a {
+    color: white;
+  }
+
+  a:hover:before,
+  a.selected:before {
+    background-color: white;
+  }
+}
+
+@media #{$device-ipad} {
+
+  .header-container,
+  .navigation-container{
+    padding-left:15%;
+    padding-top:20%;
+  }
+
+  .header-container{
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .navigation-container {
+
+    a {    
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+
+    a::before {
+      position:absolute;
+      top:3px;
+      left:-20px;
+      content: "";
+      padding-left:0px;
+      padding-bottom:2rem;
+      -webkit-transition:padding ease-in .3s;
+      transition:padding ease .3s;
+    }
+
+    a:hover:before,
+    a.selected:before {
+      content: "";
+      background-color:$purple;
+      padding-left:8px;
+    }
+
+    li {
+      margin-bottom: 3%;
+    }
+  }
+
+  .main-container {
+    background-color:white;
+
+    #work {
+      padding:4% 15%;
+
+      li {
+        margin-bottom: 5%;
+        padding:2% !important;
+
+        figure {
+          background-color:whitesmoke;
+        }
+
+        img {
+          width: 85%;
+        }
+      }
+    }
+
+    #contacts {
+      padding:12%;
+      padding-top:5%;
+
+      h1, p {
+        margin-bottom: 10%;
+      }
+
+      h1{
+        font-size:3.3rem;
+      }
+
+      p {
+        font-size:2.3rem;
+      }
+
+      li {
+        margin-bottom: 3% !important;
+      }
+
+      li a {
+        font-size:2.8rem !important;
+      }
+
+      li i {
+        margin-right:20px;
+      }
+    }
+
+    #aboutme {
+      padding:20%;
+      padding-top:5%;
+      
+      figure {
+        margin-bottom:10%;
+      }
+
+      img {
+        width: 35%;
+      }
+
+      p {
+        font-size:2.3rem;
+        margin-bottom: 13%;
+      }
+    }  
+  }
+}
+
+@media #{$device-desktop} {
+
+
+  .header-container {
+    padding: 10%;
+
+    h1 {
+      font-size: 6rem;
+
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .navigation-container {
+    padding-top:calc( 10% + 10px );
+    padding-left:5%;
+
+    li {
+      margin-bottom: 4%;
+    }
+
+    a {
+      font-size: 2.2rem;
+    }
+
+    a::before {
+      position:absolute;
+      top:2px;
+      left:-23px;
+      padding-left:0px;
+      padding-bottom:2rem;
+    }
+
+    a:hover:before,
+    a.selected:before {
+      padding-left:8px;
+    }
+
+  }
+
+  .main-container {
+    background-color:white;
+
+    #work {
+      padding:4% 15%;
+
+      li {
+        margin-bottom: 5%;
+        padding:2% !important;
+
+        img {
+          width: 85%;
+        }
+      }
+    }
+
+    #contacts {
+      padding:12%;
+      padding-top:5%;
+
+      h1, p {
+        margin-bottom: 10%;
+      }
+
+      h1{
+        font-size:3.3rem;
+      }
+
+      p {
+        font-size:2.3rem;
+      }
+
+      li {
+        margin-bottom: 3% !important;
+      }
+
+      li a {
+        font-size:2.8rem !important;
+      }
+
+      li i {
+        margin-right:20px;
+      }
+    }
+
+    #aboutme {
+      padding:20%;
+      padding-top:5%;
+      
+      figure {
+        margin-bottom:10%;
+      }
+
+      img {
+        width: 35%;
+      }
+
+      p {
+        font-size:2.3rem;
+        margin-bottom: 13%;
+      }
+    }  
+  }
+}

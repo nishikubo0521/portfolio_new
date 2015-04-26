@@ -1,3 +1,4 @@
+<% if ( pjax != true ) { %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,8 @@
   <link href='https://fonts.googleapis.com/css?family=Jura:500,400,300,600' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/css/animate.css">
-  <link rel="stylesheet" type="text/css" href="styles/css/core.css">
-  <link rel="stylesheet" type="text/css" href="styles/css/layout.css">
+  <link rel="stylesheet" type="text/css" href="public/styles/css/core.css">
+  <link rel="stylesheet" type="text/css" href="public/styles/css/layout.css">
 </head>
 <body>
   <div class="wrapper">
@@ -41,9 +41,19 @@
         <main>
           <section id="work" class="row">
             <h1 class="text-center">MY WORK</h1>
+<% } %> 
 
-            <div id="ajaxdata">
-            </div>
+                <div id="ajaxdata">
+                  <% if ( pjax != true) { %>
+                    <% if ( directAccess == true ) { %> 
+                      <% include project-detail %>
+                    <% } %>
+                  <% } else { %>
+                    <% include project-detail %>
+                  <% } %>
+                </div>
+
+<% if ( pjax != true ) { %>
 
             <ul>
               <% var index = 0; projects.forEach(function(project){ %>
@@ -57,12 +67,13 @@
                 </li>
               <%  index ++;}) %>
             </ul>
+            
           </section>
 
           <section id="aboutme">
             <h1 class="text-center">ABOUT ME</h1>
             <figure>
-              <img src="images/naokinishikubo.png" class="img-responsive center-block">
+              <img src="public/images/naokinishikubo.png" class="img-responsive center-block">
             </figure>
             <p>Hi, my name is Naoki Nishikubo. I am a front-end web developer / designer from Vancouver. I received my certification as a Technical Web Designer from BCIT, where the program I was engaged in gave me the confidence to excel in this field. I am an enthusiast of <strong>Javascript</strong>, especially <strong>jQuery</strong> and <strong>Angular.js</strong>.</p>
 
@@ -83,9 +94,9 @@
     </div>
   </div>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script charset="utf-8" src="scripts/jquery.pjax.min.js"></script>
-<script src="scripts/script.js"></script>
-<script src="scripts/ajax.js"></script>
+<script charset="utf-8" src="public/scripts/jquery.pjax.min.js"></script>
+<script src="public/scripts/script.js"></script>
+<script src="public/scripts/ajax.js"></script>
 <!-- Design Checker
 <script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
 <script>
@@ -96,3 +107,4 @@ window.onload = function() {
 -->
 </body>
 </html>
+<% } %>

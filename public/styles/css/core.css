@@ -1,0 +1,173 @@
+.btn-close:hover {
+  cursor: pointer;
+}
+
+#ajaxdata {
+  background-color: Lavender;
+}
+
+.wrapper {
+  position: static;
+  width: 100%;
+  min-height: 667px;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.wrapper-l {
+  position: static;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.wrapper-l .header-container,
+.wrapper-l .navigation-container {
+  float: none;
+  width: 100%;
+  height: 50%;
+}
+
+.wrapper-r {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.main-container {
+  top: 0;
+  z-index: 9000;
+}
+
+/* 
+* Animation style
+*/
+.wrapper-l,
+.wrapper-r {
+  -webkit-transition: -webkit-transform ease .5s;
+  transition: transform ease .5s;
+}
+
+.keepstate-forth.wrapper-r {
+  position: fixed !important;
+}
+
+.main-on.wrapper-r,
+.main-on.wrapper-l {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.main-on.wrapper-r {
+  position: absolute;
+}
+
+.keepstate-back.wrapper-l {
+  position: fixed !important;
+}
+
+.keepstate-back.wrapper-r {
+  position: absolute;
+}
+
+#work,
+#aboutme,
+#contacts {
+  display: none;
+}
+
+.active#work,
+.active#aboutme,
+.active#contacts {
+  display: block;
+}
+
+.closebtn {
+  position: fixed !important;
+  top: 30px !important;
+  right: 30px !important;
+  z-index: 200;
+  display: none;
+}
+
+.main-on.closebtn {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper-l .header-container,
+  .wrapper-l .navigation-container {
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+
+  .wrapper-r {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 
+  * Animation style
+  */
+  .main-on.wrapper-r,
+  .main-on.wrapper-l {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@media only screen and (min-width: 892px) {
+  .closebtn {
+    display: none;
+  }
+
+  .wrapper-l {
+    position: fixed;
+  }
+  .wrapper-l .header-container,
+  .wrapper-l .navigation-container {
+    float: left;
+    height: 100%;
+  }
+  .wrapper-l .header-container {
+    width: 77%;
+  }
+  .wrapper-l .navigation-container {
+    width: 23%;
+  }
+
+  .wrapper-r {
+    position: fixed;
+    float: left;
+    width: 77%;
+    height: 100%;
+    -webkit-transform: translateX(129.87013%);
+    transform: translateX(129.87013%);
+  }
+
+  /* 
+  * Animation style
+  */
+  .main-on.wrapper-l {
+    -webkit-transform: translateX(-77%) !important;
+    transform: translateX(-77%) !important;
+  }
+
+  .main-on.wrapper-r {
+    -webkit-transform: translateX(29.87013%) !important;
+    transform: translateX(29.87013%) !important;
+    position: absolute;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  main .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

@@ -1,15 +1,9 @@
 var express = require('express');
 var app = express();
-//var ejs = require('ejs');
 var router = express.Router();
 var port = process.env.PORT || 8000;
 var json = require('./data.json');
-
 var projects = json.projects;
-
-console.log(json.projects[0]);
-console.log(process.env);
-console.log(__dirname);
 
 app.use(express.static(process.env.PWD + '/'));
 app.set('views', process.env.PWD + "/views");
@@ -26,19 +20,33 @@ app.get('/:path', function(req, res){
       requestedProject = projects[i];
     }
   }
+  
+  console.log(req.header('X-PJAX'));
 
-  res.render('project-detail', { 
-    pjax : false,
-    project : requestedProject 
-  });
+  if (req.header('X-PJAX')) {
+    res.render('layout', { 
+      pjax : true,
+      directAccess : false,
+      projects : projects,
+      project : requestedProject 
+    });
+  }else{
+    res.render('layout', { 
+      pjax : false,
+      directAccess : true,
+      projects : projects,
+      project : requestedProject 
+    });
+  }
 
-  console.log(req.query);
-  console.log(req.params.index);
 });
 
 app.get('/', function(req, res){
-  res.render('layout', { 
+  res.render('layout', {
+    pjax : false, 
+    directAccess : false,
     projects : projects,
+    project : {image : null}
   });
   console.log(req.query.index);
 });
@@ -48,11 +56,6 @@ app.listen(port);
 console.log('listening to port:' + port);
 
 /*
-app.get('/test', function(req, res){
-  console.log(req.header('X-PJAX'));
-  res.render('test', {testvalue: "YEAAAA"});
-});
-
 app.get('/test2', function(req, res){
   console.log(req.header('X-PJAX'));
   if (req.header('X-PJAX')) {
