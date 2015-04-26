@@ -3,52 +3,58 @@
 
     {
       "name" : "Chloe Ulis",
-      "url" : "http://chloeulis.com/",
-      "thumbnail" : "images/thumbnail-chloeulis.png",
-      "image" : "images/",
+      "website" : "http://chloeulis.com/",
+      "path" : "/chloe-ulis",
+      "thumbnail" : "images/thumnails/thumbnail-chloeulis.png",
+      "image" : "images/large/chloeulis_large.png",
       "alt" : "Chloe Ulis Portfolio Website",
-      "discription" : ""
+      "discription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
 
     {
       "name" : "BCIT HTP",
-      "url" : "http://nnishikubo.htpwebdesign.ca/bcit_htp/",
-      "thumbnail" : "images/thumbnail-bcit-htp.png",
+      "website" : "http://nnishikubo.htpwebdesign.ca/bcit_htp/",
+      "path" : "bcit-htp",
+      "thumbnail" : "images/thumnails/thumbnail-bcit-htp.png",
       "alt" : "BCIT High-Tech Professional Programs",
-      "image" : "images/",
+      "image" : "images/large/bcit_high_tech_professional_large.png",
       "discription" : ""
     },
 
     {
       "name" : "Previous Portfolio",
-      "url" : "http://nnishikubo.htpwebdesign.ca/previous-portfolio/",
-      "thumbnail" : "images/thumbnail-previous-portfolio.png",
+      "website" : "http://nnishikubo.htpwebdesign.ca/previous-portfolio/",
+      "path" : "previous-portfolio",
+      "thumbnail" : "images/thumnails/thumbnail-previous-portfolio.png",
       "alt" : "Previous Portfolio",
-      "image" : "images/",
+      "image" : "images/large/",
       "discription" : ""
     },
 
     {
       "name" : "Jquery Tutorial",
-      "url" : "http://nnishikubo.htpwebdesign.ca/tutorial/",
-      "thumbnail" : "images/thumbnail-jquery-tutorial.png",
-      "image" : "images/",
+      "website" : "http://nnishikubo.htpwebdesign.ca/tutorial/",
+      "path" : "jquery-tutorial",
+      "thumbnail" : "images/thumnails/thumbnail-jquery-tutorial.png",
+      "image" : "images/large/",
       "discription" : ""
     },
 
     {
       "name" : "Dental Clinic",
-      "url" : "http://nnishikubo.htpwebdesign.ca/dental_clinic/",
-      "thumbnail" : "images/thumbnail-dental-clinic.png",
+      "website" : "http://nnishikubo.htpwebdesign.ca/dental_clinic/",
+      "path" : "dental-clinic",
+      "thumbnail" : "images/thumnails/thumbnail-dental-clinic.png",
       "alt" : "N and B Dental Clinic",
-      "image" : "images/",
+      "image" : "images/large/",
       "discription" : ""
     },
 
     {
       "name" : "coming soon",
-      "url" : "",
-      "thumbnail" : "images/coming-soon.png",
+      "website" : "",
+      "path" : "",
+      "thumbnail" : "images/thumnails/coming-soon.png",
       "image" : null,
       "discription" : ""
     }

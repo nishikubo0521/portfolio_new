@@ -12,7 +12,6 @@
   <link rel="stylesheet" type="text/css" href="styles/css/animate.css">
   <link rel="stylesheet" type="text/css" href="styles/css/core.css">
   <link rel="stylesheet" type="text/css" href="styles/css/layout.css">
-</script>
 </head>
 <body>
   <div class="wrapper">
@@ -26,7 +25,7 @@
       <div class="navigation-container">
         <nav>
           <ul>
-          <li><a id="ajaxtest" href="/test">Test Link</a></li>
+          <li><a id="ajaxtest" href="/test">Tes Lik</a></li>
           <li><a id="ajaxtest2" href="test2">Test2 Link</a></li>
           <li><a id="ajaxtest3" data-val="val1" href="/test">Test Link</a></li>
           <li><button id="btn">Button</button></li>
@@ -48,17 +47,21 @@
         <main>
           <section id="work" class="row">
             <h1 class="text-center">MY WORK</h1>
+
+            <div id="ajaxdata">
+            </div>
+
             <ul>
-              <% projects.forEach(function(project){ %>
+              <% var index = 0; projects.forEach(function(project){ %>
                 <li class="col-xs-12 col-sm-6 col-md-4">
                   <figure>
-                    <a href="<%= project.url %>" target="_blank">
+                    <a href="<%= project.path %>" data-index = '<%= index %>'>
                       <img src="<%= project.thumbnail %>" alt="<%= project.alt %>" class="img-responsive center-block">
                       <figcaption class="text-center"><%= project.name %></figcaption>
                     </a>
                   </figure>
                 </li>
-              <%  }) %>
+              <%  index ++;}) %>
             </ul>
           </section>
 
@@ -89,11 +92,13 @@
 <script charset="utf-8" src="scripts/jquery.pjax.min.js"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/ajax.js"></script>
-<script src="https://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
+<!-- Design Checker
+<script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
 <script>
 window.onload = function() {
     //baseliner = new Baseliner();
 }
 </script>
+-->
 </body>
 </html>

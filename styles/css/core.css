@@ -2,6 +2,10 @@
   cursor: pointer;
 }
 
+#ajaxdata {
+  background-color: Lavender;
+}
+
 .wrapper {
   position: static;
   width: 100%;

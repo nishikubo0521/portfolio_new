@@ -1,0 +1,14 @@
+<div id="ajaxdata">
+  <a href="/d" data-val = "01">NEXT</a>
+  <a>PREV</a>
+  <a>CLOSE</a>
+  <figure>
+    <img src="<%= project.image %>" class="img-responsive center-block">
+  </figure>
+  <p id="discription" class=""><%= project.discription %></p>
+  <a href="<%= project.website %>">SITE LINK</a>
+</div>
+
+<% if ( pjax == true ) { %>
+great;
+<% } %>

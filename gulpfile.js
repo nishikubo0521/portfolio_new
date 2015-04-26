@@ -21,3 +21,12 @@ gulp.task('serve', function(){
   gulp.watch('*.html').on('change',reload);
   gulp.watch('scripts/*.js').on('change',reload);
 });
+
+var gls = require('gulp-live-server');
+
+gulp.task('app', function(){
+  var server =  gls.new('index.js');
+  server.start();
+
+  gulp.watch('styles/scss/*.scss',['sass']);
+});
