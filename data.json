@@ -1,63 +1,58 @@
 {
   "projects" : [
-
     {
-      "name" : "Chloe Ulis",
-      "website" : "http://chloeulis.com/",
-      "path" : "/chloe-ulis",
-      "thumbnail" : "public/images/thumnails/thumbnail-chloeulis.png",
-      "image" : "public/images/large/chloeulis_large.png",
-      "alt" : "Chloe Ulis Portfolio Website",
-      "discription" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "name":"Chloe Ulis",
+      "website":"http://chloeulis.com/",
+      "path":"/chloe-ulis",
+      "thumbnail":"public/images/thumnails/thumbnail-chloeulis.png",
+      "image":"public/images/large/chloeulis_large.png",
+      "alt":"Chloe Ulis Portfolio Website",
+      "description":"Chloe Ulis Art Portfolio and School Business site was designed and developed by Kaleidovision, where I acted as Lead Engineer. My responsibilities focused on creating Wordpress templates implementing custom post types and advance custom fields, testing plugins, and setting up hosting server, while providing support on client liaison, design work, and content management."
     },
-
     {
-      "name" : "BCIT HTP",
-      "website" : "http://nnishikubo.htpwebdesign.ca/bcit_htp/",
-      "path" : "bcit-htp",
-      "thumbnail" : "public/images/thumnails/thumbnail-bcit-htp.png",
-      "alt" : "BCIT High-Tech Professional Programs",
-      "image" : "public/images/large/bcit_high_tech_professional_large.png",
-      "discription" : "This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5 syntax, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
+      "name":"BCIT HTP",
+      "website":"http://nnishikubo.htpwebdesign.ca/bcit_htp/",
+      "path":"bcit-htp",
+      "thumbnail":"public/images/thumnails/thumbnail-bcit-htp.png",
+      "image":"public/images/large/bcit_high_tech_professional_large.png",
+      "alt":"BCIT High-Tech Professional Programs",
+      "description":"This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5 syntax, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
     },
-
     {
-      "name" : "Previous Portfolio",
-      "website" : "http://nnishikubo.htpwebdesign.ca/previous-portfolio/",
-      "path" : "previous-portfolio",
-      "thumbnail" : "public/images/thumnails/thumbnail-previous-portfolio.png",
-      "alt" : "Previous Portfolio",
-      "image" : "public/images/large/",
-      "discription" : "This is my previous portfolio site built with HTML5 and CSS3 which I made simple for users to browse all contents quickly. I focuesd on selecting best fonts and colors cosulting 2 excellent designers"
+      "name":"Previous Portfolio",
+      "website":"http://nnishikubo.htpwebdesign.ca/previous-portfolio/",
+      "path":"previous-portfolio",
+      "thumbnail":"public/images/thumnails/thumbnail-previous-portfolio.png",
+      "image":"public/images/large/",
+      "alt":"Previous Portfolio",
+      "description":"This is my previous portfolio site built with HTML5 and CSS3 which I made simple for users to browse all contents quickly. I focuesd on selecting best fonts and colors cosulting 2 excellent designers"
     },
-
     {
-      "name" : "Jquery Tutorial",
-      "website" : "http://nnishikubo.htpwebdesign.ca/tutorial/",
-      "path" : "jquery-tutorial",
-      "thumbnail" : "public/images/thumnails/thumbnail-jquery-tutorial.png",
-      "image" : "public/images/large/",
-      "discription" : ""
+      "name":"Jquery Tutorial",
+      "website":"http://nnishikubo.htpwebdesign.ca/tutorial/",
+      "path":"jquery-tutorial",
+      "thumbnail":"public/images/thumnails/thumbnail-jquery-tutorial.png",
+      "image":"public/images/large/",
+      "alt":"",
+      "description":""
     },
-
     {
-      "name" : "Dental Clinic",
-      "website" : "http://nnishikubo.htpwebdesign.ca/dental_clinic/",
-      "path" : "dental-clinic",
-      "thumbnail" : "public/images/thumnails/thumbnail-dental-clinic.png",
-      "alt" : "N and B Dental Clinic",
-      "image" : "public/images/large/",
-      "discription" : ""
+      "name":"Dental Clinic",
+      "website":"http://nnishikubo.htpwebdesign.ca/dental_clinic/",
+      "path":"dental-clinic",
+      "thumbnail":"public/images/thumnails/thumbnail-dental-clinic.png",
+      "image":"public/images/large/",
+      "alt":"N and B Dental Clinic",
+      "description":""
     },
-
     {
-      "name" : "coming soon",
-      "website" : "",
-      "path" : "",
-      "thumbnail" : "public/images/thumnails/coming-soon.png",
-      "image" : null,
-      "discription" : ""
+      "name":"coming soon",
+      "website":"",
+      "path":"",
+      "thumbnail":"public/images/thumnails/coming-soon.png",
+      "image":"",
+      "alt":"",
+      "description":""
     }
-
   ]
 }
