@@ -24,14 +24,24 @@ app.get('/:path', function(req, res){
       pjax : true,
       directAccess : false,
       projects : projects,
-      project : requestedProject 
+      project : requestedProject,
+      state : {
+        mainOn : "",
+        selected : "",
+        active : "",
+      }
     });
   }else{
     res.render('layout', { 
       pjax : false,
       directAccess : true,
       projects : projects,
-      project : requestedProject 
+      project : requestedProject,
+      state : {
+        mainOn : "main-on",
+        selected : "selected",
+        active : "active",
+      }
     });
   }
 
@@ -42,7 +52,12 @@ app.get('/', function(req, res){
     pjax : false, 
     directAccess : false,
     projects : projects,
-    project : {image : null}
+    project : {image : null},
+    state : {
+        mainOn : "",
+        selected : "",
+        active : "",
+    }
   });
   console.log(req.query.index);
 });

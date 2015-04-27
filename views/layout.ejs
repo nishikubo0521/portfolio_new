@@ -14,8 +14,8 @@
   <link rel="stylesheet" type="text/css" href="public/styles/css/layout.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="wrapper-l">
+  <div class="wrapper <%= state.mainOn %>">
+    <div class="wrapper-l <%= state.mainOn %>">
       <div class="header-container">
         <header>
           <h1><span>Naoki</span><span>Nishikubo's</span><span>Portfolio</span></h1>
@@ -25,8 +25,8 @@
       <div class="navigation-container">
         <nav>
           <ul>
-            <li><a class="btn-to-home selected">home</a></li>
-            <li><a class="btn-to-section" data-section-id="#work">work</a></li>
+            <li><a class="btn-to-home <% if(directAccess == false) { %> selected <% } %>">home</a></li>
+            <li><a class="btn-to-section <%= state.selected %>" data-section-id="#work">work</a></li>
             <li><a class="btn-to-section" data-section-id="#aboutme">about me</a></li>
             <li><a class="btn-to-section" data-section-id="#contacts">contacts</a></li>
           </ul>
@@ -34,12 +34,12 @@
       </div>
     </div>
 
-    <i class="ion-ios-close-outline btn-to-home closebtn"></i>
+    <i class="ion-ios-close-outline btn-to-home closebtn <%= state.mainOn %>"></i>
 
-    <div class="wrapper-r">
+    <div class="wrapper-r <%= state.mainOn %>">
       <div class="main-container">
         <main>
-          <section id="work" class="row">
+          <section id="work" class="row <%= state.active %>">
             <h1 class="text-center">MY WORK</h1>
 <% } %> 
 
@@ -67,7 +67,7 @@
                 </li>
               <%  index ++;}) %>
             </ul>
-            
+
           </section>
 
           <section id="aboutme">

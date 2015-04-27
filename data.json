@@ -33,8 +33,8 @@
       "path":"jquery-tutorial",
       "thumbnail":"public/images/thumnails/thumbnail-jquery-tutorial.png",
       "image":"public/images/large/",
-      "alt":"",
-      "description":""
+      "alt":"Jquery Tutorial",
+      "description":"This is a jQuery tutorial website, where user can experience all the simple features implemented in the site itself. Also I focused on creating natural steps so the users do not finish the tutorial in the middle."
     },
     {
       "name":"Dental Clinic",
@@ -43,7 +43,7 @@
       "thumbnail":"public/images/thumnails/thumbnail-dental-clinic.png",
       "image":"public/images/large/",
       "alt":"N and B Dental Clinic",
-      "description":""
+      "description":"This is my first team project where I was working for design, information architecture, HTML5 and CSS3 implementing google map and a basic form. We also learned how to create business documentation assuming the situation with real clients."
     },
     {
       "name":"coming soon",
