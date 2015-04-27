@@ -41,8 +41,8 @@
         <main>
           <section id="work" class="row <%= state.active %>">
             <h1 class="text-center">MY WORK</h1>
-<% } %> 
-
+<% } %>
+              <div class="ajaxdata-container">
                 <div id="ajaxdata">
                   <% if ( pjax != true) { %>
                     <% if ( directAccess == true ) { %> 
@@ -52,6 +52,7 @@
                     <% include project-detail %>
                   <% } %>
                 </div>
+              </div>
 
 <% if ( pjax != true ) { %>
 

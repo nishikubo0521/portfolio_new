@@ -190,6 +190,25 @@ a:hover {
   color: #0077b5;
 }
 
+.ajaxdata-container {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  height: 0;
+  overflow-y: hidden;
+  opacity: 0;
+}
+
+.ajaxdata-container.pjax-fetch {
+  height: 200px;
+  opacity: 0;
+}
+
+.ajaxdata-container.pjax-rendered {
+  overflow-y: hidden;
+  height: auto;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 767px) {
   .main-container #work li figure {
     background-color: #e7e7e7;

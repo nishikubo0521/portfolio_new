@@ -1,8 +1,8 @@
-var express = require('express');
+var express = require('express'),
     app = express(),
     router = express.Router();
-var port = process.env.PORT || 8000;
-var json = require('./data.json');
+var port = process.env.PORT || 8000,
+    json = require('./data.json'),
     projects = json.projects;
 
 app.use(express.static(process.env.PWD + '/'));
@@ -28,7 +28,7 @@ app.get('/:path', function(req, res){
       state : {
         mainOn : "",
         selected : "",
-        active : "",
+        active : ""
       }
     });
   }else{
@@ -40,7 +40,7 @@ app.get('/:path', function(req, res){
       state : {
         mainOn : "main-on",
         selected : "selected",
-        active : "active",
+        active : "active"
       }
     });
   }
@@ -56,13 +56,11 @@ app.get('/', function(req, res){
     state : {
         mainOn : "",
         selected : "",
-        active : "",
+        active : ""
     }
   });
-  console.log(req.query.index);
 });
 
 
 app.listen(port);
 console.log('listening to port:' + port);
-
