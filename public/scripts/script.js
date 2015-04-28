@@ -44,7 +44,7 @@
 
         $('.ajaxdata-container').animate({ height : px }, loadingDuration);
         $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
-        //history.pushState({},"", url);
+        history.pushState({},"", url);
       }, loadingDuration);
 
     }
