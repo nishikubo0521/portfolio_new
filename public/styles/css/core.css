@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 
-#ajaxdata {
+.ajaxdata-container {
   background-color: Lavender;
 }
 
@@ -72,12 +72,11 @@
   position: absolute;
 }
 
-#work,
+/*#work,
 #aboutme,
-#contacts {
+#contacts{
   display: none;
-}
-
+}*/
 .active#work,
 .active#aboutme,
 .active#contacts {

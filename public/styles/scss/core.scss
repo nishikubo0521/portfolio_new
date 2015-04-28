@@ -24,7 +24,7 @@ $main-md-width: $header-md-width;
 
 //To Debug
 .btn-close:hover{cursor: pointer;}
-#ajaxdata{background-color:Lavender;}
+.ajaxdata-container{background-color:Lavender;}
 //.wrapper{background-color:aqua;}
 //.header-container{background-color:pink;}
 //.navigation-container{background-color: #55f;}
@@ -101,11 +101,11 @@ $main-md-width: $header-md-width;
   position: absolute;
 }
 
-#work,
+/*#work,
 #aboutme,
 #contacts{
   display: none;
-}
+}*/
 
 .active#work,
 .active#aboutme,
