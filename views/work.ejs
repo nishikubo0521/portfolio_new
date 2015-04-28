@@ -1,28 +1,16 @@
 <section id="work" class="row <%= state.active %>">
-
-            <% if (isActive.work) { %>
   <h1 class="text-center">MY WORK</h1>
-            <%}%>
-
   <div class="ajaxdata-container">
     <div id="ajaxdata">
-
-            <% if (isActive.work) { %>
-      <% if (isActive.work) { %>
-        <% if ( pjax != true) { %>
-          <% if ( directAccess == true ) { %> 
-            <% include project-detail %>
-          <% } %>
-        <% } else { %>
+      <% if ( pjax != true) { %>
+        <% if ( directAccess == true ) { %> 
           <% include project-detail %>
         <% } %>
-      <% }%>
-            <%}%>
-
+      <% } else { %>
+        <% include project-detail %>
+      <% } %>
     </div>
   </div>
-
-            <% if (isActive.work) { %>
   <ul>
     <% var index = 0; projects.forEach(function(project){ %>
       <li class="col-xs-12 col-sm-6 col-md-4">
@@ -35,6 +23,4 @@
       </li>
     <%  index ++;}) %>
   </ul>
-            <%}%>
-  
 </section>

@@ -40,26 +40,31 @@
       <div class="main-container">
         <main>
 
-<% } %>
           <div id="section-container">
-            <% include work %>
-            <% if (isActive.aboutme) { %>
-              <% include aboutme %>
-            <%}%>
-            <% if (isActive.contacts) { %>
-              <% include contacts %>
-            <%}%>
-          <div>
+          <% } %>
 
-<% if ( pjax != true ) { %>
+            <% if(isActive.work) {%>
+              <% include work %>
+            <% } %>
+            <% if(isActive.aboutme) {%>
+              <% include aboutme %>
+            <% } %>
+            <% if(isActive.contacts) {%>
+              <% include contacts %>
+            <% } %>
+
+          <% if ( pjax != true ) { %>
+          </div>
         </main>
       </div>
     </div>
   </div>
 <script src="jquery/dist/jquery.min.js"></script>
-<script charset="utf-8" src="scripts/jquery.pjax.min.js"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/ajax.js"></script>
+<!--
+<script charset="utf-8" src="scripts/jquery.pjax.min.js"></script>
+-->
 <!-- Design Checker
 <script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
 <script>

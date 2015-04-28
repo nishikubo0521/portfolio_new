@@ -41,8 +41,11 @@ app.get('/:path', function(req, res){
       }
       isActive[req.params.path] = true;
       console.log(isActive);
+      console.log(req.params.path);
+      console.log(req.query);
+
       
-  if (req.header('X-PJAX')) {
+  if (req.query.ajax) {
     res.render('layout', { 
       pjax : true,
       isActive : isActive,
@@ -84,8 +87,10 @@ app.get('/work/:path', function(req, res){
       requestedProject = projects[i];
     }
   }
+  console.log(requestedProject.name);
+  console.log(req.query);
 
-  if (req.header('X-PJAX')) {
+  if (req.query.ajax) {
     res.render('layout', { 
       pjax : true,
       isActive : {
