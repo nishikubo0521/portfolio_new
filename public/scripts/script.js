@@ -28,7 +28,7 @@
 
     var startProjectAnimation = function(data){
       var wait = 500; //To load innerHeight of #ajaxheight
-      var part = $(data).find('#ajaxdata');
+      var part = $(data).find('#ajaxdata > *');
       console.log(part);
 
       $body.animate( {scrollTop:0}, loadingDuration);
