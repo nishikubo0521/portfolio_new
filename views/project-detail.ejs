@@ -1,9 +1,7 @@
-
-  <a href="/d" data-val = "01">NEXT</a>
-  <a>PREV</a>
-  <a>CLOSE</a>
-  <figure>
-    <img src="<%= project.image %>" class="img-responsive center-block">
-  </figure>
-  <p id="description" class=""><%= project.description %></p>
-  <a href="<%= project.website %>">SITE LIN</a>
+<% if (project) { %>
+<figure>
+  <img src="<%= project.image %>" class="img-responsive center-block">
+</figure>
+<p id="description" class=""><%= project.description %></p>
+<a href="<%= project.website %>">SITE LIN</a>
+<% } %>

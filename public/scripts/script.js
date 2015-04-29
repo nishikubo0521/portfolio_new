@@ -8,45 +8,43 @@
   var $projectlink = $('#work a'); // need to add event to this twice (for Ajax and Pageload)
 
   // Duration of animation btween wrapperLR
-  var $animationDurationProperty = $wrapperLR.css('transition-duration');
-  var $animationDuration = 1000 * parseFloat($animationDurationProperty.replace('s',''));
+  var animationDurationProperty = $wrapperLR.css('transition-duration');
+  var animationDuration = 1000 * parseFloat(animationDurationProperty.replace('s',''));
 
   /*
   * Open the window to show the project detail on #work section
   */
+
   var openProjectDetail = function(e){
 
     e.preventDefault();
-    console.log($projectlink);
 
-    var height = 0;
-    var px = "";
-    var loadingDuration = 900;
+    var loadingDuration = 520;
+    var height = 50;
     var url =  $(this).attr('href');
+    var $body = $('body, html');
+    var $ajaxdataContainer = $('.ajaxdata-container');
     console.log(url);
 
-    var startAnimation = function(){
-      $('html, body').animate( {scrollTop:0}, loadingDuration);
-      $('.ajaxdata-container').animate({ height : '50px'}, loadingDuration);
-      $('#ajaxdata').animate({ opacity:0 }, loadingDuration);
-    }
+    var startProjectAnimation = function(data){
+      var wait = 500; //To load innerHeight of #ajaxheight
+      var part = $(data).find('#ajaxdata');
+      console.log(part);
 
-    var complete = function(data){
-      var part = $(data).find('.ajaxdata-container');
-      //console.log(part.html());
+      $body.animate( {scrollTop:0}, loadingDuration);
+      $('.ajaxdata-container').animate({ height : height + 'px'}, loadingDuration);
+      $('#ajaxdata').animate({ opacity:0 }, loadingDuration, function(){
+        $('#ajaxdata').html(part);
 
-      setTimeout(function(){
-
-        $('.ajaxdata-container').html(part);
-        height = $('#ajaxdata').innerHeight();
-        px = height + "px";
-        console.log(px);
-
-        $('.ajaxdata-container').animate({ height : px }, loadingDuration);
-        $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
-        history.pushState({},"", url);
-      }, loadingDuration);
-
+        setTimeout(function(){
+          $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
+          height = $('#ajaxdata').innerHeight();
+          height = height + "px";
+          console.log(height);
+          $('.ajaxdata-container').animate({ height : height }, loadingDuration );
+          history.pushState({},"", url);
+        }, wait);
+      });
     }
 
     $.ajax({
@@ -54,10 +52,8 @@
       data : {ajax : true},
       dataType : 'html'
       //beforeSend : startAnimation
-    })
-    .done(startAnimation)
-    .fail(function(){alert('error');})
-    .always(complete);
+    }).done(startProjectAnimation)
+      .fail(function(){alert('error');})
   }
 
   /*
@@ -78,7 +74,7 @@
         setTimeout(function(){
           $wrapperLR.removeClass('keepstate-forth');
           $(window).scrollTop(0);
-        }, $animationDuration);
+        }, animationDuration);
       }
       else{
           $(window).scrollTop(0);
@@ -97,12 +93,13 @@
     e.preventDefault();
     var url = $(this).attr('href');
     console.log(url);
+    $('.ajaxdata-container').css({ height : '0px' });
     //$('#section-container').load(url, {ajax : true} ,function(){console.log('hey')} );
     $.ajax({
       url:url,
       data : {ajax : true},
       dataType: 'html'
-    }).done(complete.bind(this));
+    }).done(complete);
   }
 
   /*
@@ -121,7 +118,7 @@
         $wrapperLR.removeClass('keepstate-back');
         $('body').removeClass('keepstate-back');
         $(window).scrollTop(0);
-      }, $animationDuration);
+      }, animationDuration);
     }
 
     $btnToHome.not($closebtn).addClass('selected');
