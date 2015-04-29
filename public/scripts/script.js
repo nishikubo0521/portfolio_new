@@ -19,7 +19,7 @@
 
     e.preventDefault();
 
-    var loadingDuration = 520;
+    var loadingDuration = 720;
     var height = 50;
     var url =  $(this).attr('href');
     var $body = $('body, html');
@@ -35,7 +35,7 @@
       $('.ajaxdata-container').animate({ height : height + 'px'}, loadingDuration);
       $('#ajaxdata').animate({ opacity:0 }, loadingDuration, function(){
         $('#ajaxdata').html(part);
-
+        console.log('height');
         setTimeout(function(){
           $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
           height = $('#ajaxdata').innerHeight();
@@ -80,15 +80,16 @@
           $(window).scrollTop(0);
       }
 
-      // To mark the only link selected
-      var $selectedLink = $(this);
-      var $unselectedLink =$btnToSection.not($selectedLink);
-      $selectedLink.addClass('selected');
-      $btnToHome.removeClass('selected');
-      $unselectedLink.removeClass('selected');
-
       history.pushState({},"", url);
     }
+
+
+    // To mark the only link selected
+    var $selectedLink = $(this);
+    var $unselectedLink =$btnToSection.not($selectedLink);
+    $selectedLink.addClass('selected');
+    $btnToHome.removeClass('selected');
+    $unselectedLink.removeClass('selected');
 
     e.preventDefault();
     var url = $(this).attr('href');

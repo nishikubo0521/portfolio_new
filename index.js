@@ -64,7 +64,7 @@ app.get('/:path', function(req, res){
       isActive : isActive,
       directAccess : true,
       projects : projects,
-      project : requestedProject,
+      project : null,
       state : {
         mainOn : "main-on",
         selected : "selected",

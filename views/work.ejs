@@ -1,19 +1,21 @@
 <section id="work" class="row <%= state.active %>">
   <h1 class="text-center">MY WORK</h1>
-  <div class="ajaxdata-container col-md-12">
-    <div id="ajaxdata">
-      <% if ( pjax != true) { %>
-        <% if ( directAccess == true ) { %> 
+  <div class="col-md-12">
+    <div class="ajaxdata-container" style="height:<%= (directAccess)? "auto" : 0 %>">
+      <div id="ajaxdata" class="">
+        <% if ( pjax != true) { %>
+          <% if ( directAccess == true ) { %> 
+            <% include project-detail %>
+          <% } %>
+        <% } else { %>
           <% include project-detail %>
         <% } %>
-      <% } else { %>
-        <% include project-detail %>
-      <% } %>
-    </div>
+      </div>
+    </div>    
   </div>
   <ul>
     <% var index = 0; projects.forEach(function(project){ %>
-      <li class="col-xs-12 col-sm-6 col-md-4">
+      <li class="col-xs-6 col-sm-6 col-md-4">
         <figure>
           <a href="<%= project.path %>" data-index = '<%= index %>'>
             <img src="<%= project.thumbnail %>" alt="<%= project.alt %>" class="img-responsive center-block">

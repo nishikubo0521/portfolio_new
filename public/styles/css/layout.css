@@ -96,6 +96,37 @@ a:hover {
   padding: 12%;
   padding-top: 17%;
 }
+.main-container #work .ajaxdata-container {
+  margin-bottom: 5%;
+  overflow-y: hidden;
+  background-color: Aliceblue;
+  height: 0;
+  width: 100%;
+}
+.main-container #work .ajaxdata-container #ajaxdata {
+  padding: 5% 8%;
+  padding-bottom: 2%;
+}
+.main-container #work .ajaxdata-container #ajaxdata * {
+  margin-bottom: 7%;
+}
+.main-container #work .ajaxdata-container #ajaxdata p {
+  font-size: 1.5rem !important;
+}
+.main-container #work .ajaxdata-container #ajaxdata p a {
+  font-size: 2.0rem;
+  font-family: 'Jura', sans-serif;
+  background-color: Aliceblue;
+  padding: 2%;
+  line-height: 1.2;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+.main-container #work .ajaxdata-container #ajaxdata p a:hover {
+  background-color: DarkOrange;
+  color: white;
+  border-color: #ff9d11;
+}
 .main-container #work li {
   margin-bottom: 5%;
   padding: 5% !important;
@@ -190,10 +221,6 @@ a:hover {
   color: #0077b5;
 }
 
-.ajaxdata-container {
-  overflow-y: hidden;
-}
-
 @media only screen and (max-width: 767px) {
   .main-container #work li figure {
     background-color: #e7e7e7;
@@ -255,6 +282,28 @@ a:hover {
   .main-container #contacts {
     padding: 4% 17%;
     padding-bottom: 40%;
+  }
+  .main-container #work .ajaxdata-container {
+    margin-bottom: 5%;
+    overflow-y: hidden;
+    background-color: Aliceblue;
+    height: 0;
+    width: 100%;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata {
+    padding: 5% 8%;
+    padding-bottom: 2%;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata * {
+    margin-bottom: 7%;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata p {
+    font-size: 1.7rem !important;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata p a {
+    font-size: 2.2rem;
+    padding: 2%;
+    line-height: 1.2;
   }
   .main-container #work li {
     margin-bottom: 5%;
