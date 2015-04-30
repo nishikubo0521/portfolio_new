@@ -16,7 +16,7 @@
       "thumbnail":"images/thumnails/thumbnail-bcit-htp.png",
       "image":"images/large/bcit-htp.png",
       "alt":"BCIT High-Tech Professional Programs",
-      "description":"This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5 syntax, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
+      "description":"This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
     },
     {
       "name":"Previous Portfolio",
@@ -34,7 +34,7 @@
       "thumbnail":"images/thumnails/thumbnail-jquery-tutorial.png",
       "image":"images/large/jquery-tutorial.png",
       "alt":"Jquery Tutorial",
-      "description":"This is a jQuery tutorial website, where user can experience all the simple features implemented in the site itself. Also I focused on creating natural steps so the users do not finish the tutorial in the middle."
+      "description":"This is a jQuery tutorial website, where users can experience all the simple features implemented in the site itself. Also I focused on creating natural steps so the users do not finish the tutorial in the middle."
     },
     {
       "name":"Dental Clinic",
@@ -46,7 +46,7 @@
       "description":"This is my first team project where I was working for design, information architecture, HTML5 and CSS3 implementing google map and a basic form. We also learned how to create business documentation assuming the situation with real clients."
     },
     {
-      "name":"coming soon",
+      "name":"Coming Soon",
       "website":"",
       "path":"/work",
       "thumbnail":"images/thumnails/coming-soon.png",
