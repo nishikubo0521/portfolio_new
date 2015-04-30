@@ -112,18 +112,29 @@ a:hover {
 }
 .main-container #work .ajaxdata-container #ajaxdata h2 {
   color: gray;
+  font-size: 1.9rem;
+  margin-bottom: 6%;
+}
+.main-container #work .ajaxdata-container #ajaxdata h3 {
+  color: gray;
+  border-bottom: solid 1px #CDCDCD;
+  font-size: 1.4rem;
+  padding-bottom: 3%;
+  margin-top: 5%;
+  margin-bottom: 3%;
 }
 .main-container #work .ajaxdata-container #ajaxdata p {
   font-size: 1.5rem !important;
   color: gray;
 }
 .main-container #work .ajaxdata-container #ajaxdata p a {
-  font-size: 2.0rem;
+  font-size: 1.4rem;
   font-family: 'Jura', sans-serif;
   color: gray;
   background-color: whitesmoke;
-  padding: 2%;
+  padding: 1.5% 5%;
   line-height: 1.2;
+  margin-bottom: 0;
   -webkit-transition: all ease .3s;
   transition: all ease .3s;
 }
@@ -308,12 +319,18 @@ a:hover {
   .main-container #work .ajaxdata-container #ajaxdata * {
     margin-bottom: 7%;
   }
+  .main-container #work .ajaxdata-container #ajaxdata h2 {
+    font-size: 2.2rem;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata h3 {
+    font-size: 1.7rem;
+  }
   .main-container #work .ajaxdata-container #ajaxdata p {
     font-size: 1.7rem !important;
   }
   .main-container #work .ajaxdata-container #ajaxdata p a {
-    font-size: 2.2rem;
-    padding: 2%;
+    font-size: 1.7rem;
+    padding: 1.5% 5%;
     line-height: 1.2;
   }
   .main-container #work li {
