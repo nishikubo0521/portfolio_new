@@ -39,10 +39,8 @@
     <div class="wrapper-r <%= state.mainOn %>">
       <div class="main-container">
         <main>
-
           <div id="section-container">
           <% } %>
-
             <% if(isActive.work) {%>
               <% include work %>
             <% } %>
@@ -52,7 +50,6 @@
             <% if(isActive.contacts) {%>
               <% include contacts %>
             <% } %>
-
           <% if ( pjax != true ) { %>
           </div>
         </main>

@@ -20,6 +20,7 @@
     e.preventDefault();
 
     var loadingDuration = 720;
+    var wait = 300; //To load innerHeight of #ajaxheight
     var height = 50;
     var url =  $(this).attr('href');
     var $body = $('body, html');
@@ -27,7 +28,6 @@
     console.log(url);
 
     var startProjectAnimation = function(data){
-      var wait = 500; //To load innerHeight of #ajaxheight
       var part = $(data).find('#ajaxdata > *');
       console.log(part);
 
@@ -62,10 +62,26 @@
   var openSection = function(e){
 
     var complete = function(data){
+      //var part = $(data).find('section');
 
-      $('#section-container').html(data);
-      $projectlink = $('#work a');
-      $projectlink.on('click', openProjectDetail);
+      var datapart = $(data).find('section');
+      console.log(datapart);
+      //$('#section-container').html(datapart);
+
+      //console.log(part);
+      $('.main-container')
+      .append('<embed src="images/loadingGIF/spin.svg" type="image/svg+xml" style="position:absolute; top:45%; left: 50%; z-index: 9999;" />')
+      
+      $('#section-container')
+      .hide()
+      .html(data)
+
+      setTimeout(function(){ 
+          $projectlink = $('#work a');
+          $projectlink.on('click', openProjectDetail);
+          $('#section-container').show();
+          $('.main-container embed').remove();
+      }, 500)
 
       //This prevents the page from being at the top when going to main
       if(! $wrapperLR.hasClass('main-on')){
