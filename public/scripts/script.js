@@ -35,22 +35,23 @@
     var startProjectAnimation = function(data){
       var $ajaxdata = $('#ajaxdata');
       var $ajaxdataContents = $(data).find('#ajaxdata > *');
-      console.log($ajaxdataContents);
-
       $body.animate( {scrollTop:0}, loadingDuration);
       $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight + 'px'}, loadingDuration);
 
       $ajaxdata.animate({ opacity:0 }, loadingDuration, function(){
+        //To load html contents before showing
         $ajaxdata.html($ajaxdataContents);
 
         setTimeout(function(){
           //To register event when loaded.
           $('#close-project-detail').on('click', closeProjectDetail); 
           $ajaxdata.animate({ opacity:1 }, loadingDuration);
+
           //To keep the height of previous window so that the window is not closed every time.
           ProjectDetailWindowHeight = $ajaxdata.innerHeight();
           ProjectDetailWindowHeight = ProjectDetailWindowHeight + "px";
           console.log(ProjectDetailWindowHeight);
+
           //To animate to change the hight that the nexet project window has.
           $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight }, loadingDuration );
           history.pushState({},"", url);
@@ -101,7 +102,7 @@
           $sectionContainer.children().fadeIn(250);
           $('.main-container embed').remove();
           $sectionContainer.css({height:"auto"})
-      }, 500)
+      }, 500 )
 
       if(! $wrapperLR.hasClass('main-on')){
 
