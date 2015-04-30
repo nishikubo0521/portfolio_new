@@ -120,6 +120,19 @@ a:hover {
       height: 0;
       width: 100%;
 
+      #close-project-detail{
+        font-size:2.7rem;
+        color: gray;
+        margin-bottom: 0 !important;
+        float: right;
+        position: relative;
+        top: -0.2rem;
+      }
+
+      #close-project-detail:hover {
+        cursor: pointer;
+      }
+
       #ajaxdata{
         padding: 5% 8%;
         padding-bottom : 2%;
@@ -132,6 +145,11 @@ a:hover {
           color: gray;
           font-size: 1.9rem;
           margin-bottom: 6%;
+          text-align: bottom;
+
+          span{
+            float: left;
+          }
         }
 
         h3{
@@ -383,6 +401,11 @@ a:hover {
         background-color: whitesmoke;
         height: 0;
         width: 100%;
+
+        #close-project-detail{
+          font-size:4rem;
+          top: -0.8rem;
+        }
 
         #ajaxdata{
           padding: 5% 8%;

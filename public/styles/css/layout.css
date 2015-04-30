@@ -103,6 +103,17 @@ a:hover {
   height: 0;
   width: 100%;
 }
+.main-container #work .ajaxdata-container #close-project-detail {
+  font-size: 2.7rem;
+  color: gray;
+  margin-bottom: 0 !important;
+  float: right;
+  position: relative;
+  top: -0.2rem;
+}
+.main-container #work .ajaxdata-container #close-project-detail:hover {
+  cursor: pointer;
+}
 .main-container #work .ajaxdata-container #ajaxdata {
   padding: 5% 8%;
   padding-bottom: 2%;
@@ -114,6 +125,10 @@ a:hover {
   color: gray;
   font-size: 1.9rem;
   margin-bottom: 6%;
+  text-align: bottom;
+}
+.main-container #work .ajaxdata-container #ajaxdata h2 span {
+  float: left;
 }
 .main-container #work .ajaxdata-container #ajaxdata h3 {
   color: gray;
@@ -311,6 +326,10 @@ a:hover {
     background-color: whitesmoke;
     height: 0;
     width: 100%;
+  }
+  .main-container #work .ajaxdata-container #close-project-detail {
+    font-size: 4rem;
+    top: -0.8rem;
   }
   .main-container #work .ajaxdata-container #ajaxdata {
     padding: 5% 8%;

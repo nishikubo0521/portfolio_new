@@ -5,7 +5,7 @@
   var $section = $('section');
   var $btnToHome = $('.btn-to-home'); // mobile close btn and home link have this class
   var $closebtn = $('.closebtn'); // mobile close btn and home link have this class
-  var $projectlink = $('#work a'); // need to add event to this twice (for Ajax and Pageload)
+  var $projectlink = $('#work li a'); // need to add event to this twice (for Ajax and Pageload)
 
   // Duration of animation btween wrapperLR
   var animationDurationProperty = $wrapperLR.css('transition-duration');
@@ -28,6 +28,7 @@
     console.log(url);
 
     var startProjectAnimation = function(data){
+
       var part = $(data).find('#ajaxdata > *');
       console.log(part);
 
@@ -37,6 +38,7 @@
         $('#ajaxdata').html(part);
         console.log('height');
         setTimeout(function(){
+          $('#close-project-detail').on('click', closeProjectDetail); //To register event when loaded
           $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
           height = $('#ajaxdata').innerHeight();
           height = height + "px";
@@ -54,6 +56,11 @@
       //beforeSend : startAnimation
     }).done(startProjectAnimation)
       .fail(function(){alert('error');})
+  }
+
+  var closeProjectDetail = function(){
+    $('.ajaxdata-container').animate({ height:0 }, 500);
+    height = 50;
   }
 
   /*
@@ -81,8 +88,9 @@
       //.html(data)
 
       setTimeout(function(){ 
-          $projectlink = $('#work a');
+          $projectlink = $('#work li a');
           $projectlink.on('click', openProjectDetail);
+
           $('#section-container').children().fadeIn(250);
           $('.main-container embed').remove();
           $('#section-container').css({height:"auto"})
@@ -153,6 +161,7 @@
 
   $projectlink.on('click', openProjectDetail);
 
+  $('#close-project-detail').on('click', closeProjectDetail);
 })();
 
 /*
