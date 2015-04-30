@@ -38,7 +38,7 @@
       console.log($ajaxdataContents);
 
       $body.animate( {scrollTop:0}, loadingDuration);
-      $ajaxdataContainer.animate({ height : height + 'px'}, loadingDuration);
+      $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight + 'px'}, loadingDuration);
 
       $ajaxdata.animate({ opacity:0 }, loadingDuration, function(){
         $ajaxdata.html($ajaxdataContents);
@@ -78,7 +78,7 @@
   * Moving Animation to go to a section in main page.
   */
   var openSection = function(e){
-    height = 50;
+    ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
 
     var complete = function(data){
 
