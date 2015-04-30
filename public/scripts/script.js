@@ -1,29 +1,32 @@
 (function(){
   
-  var $btnToSection = $(".btn-to-section"); //nav links have this class
-  var $wrapperLR = $('.wrapper-l, .wrapper-r'); // that wrap header, navigation, and main container
+  var $btnToSection = $(".btn-to-section"); //Nav links have this class.
+  var $wrapperLR = $('.wrapper-l, .wrapper-r'); // The 2 classes wrap header, navigation, and main container.
   var $mainContainer = $('.main-container');
   var $sectionContainer = $('#section-container');
   var $section = $('section');
-  var $btnToHome = $('.btn-to-home'); // mobile close btn and home link have this class
-  var $closebtn = $('.closebtn'); // mobile close btn and home link have this class
-  var $projectlink = $('#work li a'); // need to add event to this twice (for Ajax and Pageload)
+  var $btnToHome = $('.btn-to-home'); // Mobile close btn and home link have this class.
+  var $closebtn = $('.closebtn'); // Mobile close btn.
+  var $projectlink = $('#work li a'); // Need to add event to this twice (for Ajax and Pageload).
 
   // Duration of animation btween wrapperLR
   var animationDurationProperty = $wrapperLR.css('transition-duration');
   var animationDuration = 1000 * parseFloat(animationDurationProperty.replace('s',''));
 
-  var height = 50; // Initial height of the project detail window when loading contents.
+   // The height of project detail window when loading contents.
+   // (FIXME: When page is directly loaded, now it closes the window to 50px).
+  var initialProjectDetailWindowHeight = 50;
+  var ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
 
   /*
-  * Open the window to show the project detail on #work section
+  * Open the window to show the project detail on #work section.
   */
   var openProjectDetail = function(e){
 
     e.preventDefault();
 
     var loadingDuration = 720;
-    var wait = 300; //To load innerHeight of #ajaxheight
+    var wait = 300; //To load innerHeight of #ajaxheight.
     var url =  $(this).attr('href');
     var $body = $('body, html');
     var $ajaxdataContainer = $('.ajaxdata-container');
@@ -41,12 +44,15 @@
         $ajaxdata.html($ajaxdataContents);
 
         setTimeout(function(){
-          $('#close-project-detail').on('click', closeProjectDetail); //To register event when loaded
+          //To register event when loaded.
+          $('#close-project-detail').on('click', closeProjectDetail); 
           $ajaxdata.animate({ opacity:1 }, loadingDuration);
-          height = $ajaxdata.innerHeight();
-          height = height + "px";
-          console.log(height);
-          $ajaxdataContainer.animate({ height : height }, loadingDuration );
+          //To keep the height of previous window so that the window is not closed every time.
+          ProjectDetailWindowHeight = $ajaxdata.innerHeight();
+          ProjectDetailWindowHeight = ProjectDetailWindowHeight + "px";
+          console.log(ProjectDetailWindowHeight);
+          //To animate to change the hight that the nexet project window has.
+          $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight }, loadingDuration );
           history.pushState({},"", url);
         }, wait);
       });
@@ -60,9 +66,12 @@
       .fail(function(){alert('error');})
   }
 
+  /*
+  * Close the project detail window.
+  */
   var closeProjectDetail = function(){
     $('.ajaxdata-container').animate({ height:0 }, 500);
-    height = 50;
+    ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
   }
 
   /*
