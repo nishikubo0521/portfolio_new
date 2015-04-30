@@ -2,6 +2,8 @@
   
   var $btnToSection = $(".btn-to-section"); //nav links have this class
   var $wrapperLR = $('.wrapper-l, .wrapper-r'); // that wrap header, navigation, and main container
+  var $mainContainer = $('.main-container');
+  var $sectionContainer = $('#section-container');
   var $section = $('section');
   var $btnToHome = $('.btn-to-home'); // mobile close btn and home link have this class
   var $closebtn = $('.closebtn'); // mobile close btn and home link have this class
@@ -11,11 +13,11 @@
   var animationDurationProperty = $wrapperLR.css('transition-duration');
   var animationDuration = 1000 * parseFloat(animationDurationProperty.replace('s',''));
 
+  var height = 50; // Initial height of the project detail window when loading contents.
+
   /*
   * Open the window to show the project detail on #work section
   */
-
-  var height = 50;
   var openProjectDetail = function(e){
 
     e.preventDefault();
@@ -28,22 +30,23 @@
     console.log(url);
 
     var startProjectAnimation = function(data){
-
-      var part = $(data).find('#ajaxdata > *');
-      console.log(part);
+      var $ajaxdata = $('#ajaxdata');
+      var $ajaxdataContents = $(data).find('#ajaxdata > *');
+      console.log($ajaxdataContents);
 
       $body.animate( {scrollTop:0}, loadingDuration);
-      $('.ajaxdata-container').animate({ height : height + 'px'}, loadingDuration);
-      $('#ajaxdata').animate({ opacity:0 }, loadingDuration, function(){
-        $('#ajaxdata').html(part);
-        console.log('height');
+      $ajaxdataContainer.animate({ height : height + 'px'}, loadingDuration);
+
+      $ajaxdata.animate({ opacity:0 }, loadingDuration, function(){
+        $ajaxdata.html($ajaxdataContents);
+
         setTimeout(function(){
           $('#close-project-detail').on('click', closeProjectDetail); //To register event when loaded
-          $('#ajaxdata').animate({ opacity:1 }, loadingDuration);
-          height = $('#ajaxdata').innerHeight();
+          $ajaxdata.animate({ opacity:1 }, loadingDuration);
+          height = $ajaxdata.innerHeight();
           height = height + "px";
           console.log(height);
-          $('.ajaxdata-container').animate({ height : height }, loadingDuration );
+          $ajaxdataContainer.animate({ height : height }, loadingDuration );
           history.pushState({},"", url);
         }, wait);
       });
@@ -53,7 +56,6 @@
       url: url,
       data : {ajax : true},
       dataType : 'html'
-      //beforeSend : startAnimation
     }).done(startProjectAnimation)
       .fail(function(){alert('error');})
   }
@@ -68,38 +70,38 @@
   */
   var openSection = function(e){
     height = 50;
+
     var complete = function(data){
-      //var part = $(data).find('section');
-      $('#section-container').css({height:"100vh"})
 
-      var datapart = $(data).find('section');
-      console.log(datapart);
-      //$('#section-container').html(datapart);
+      //To keep the height of main page for the background not to be lost.
+      $sectionContainer.css({height:"100vh"});
 
-      //console.log(part);
-      $('.main-container')
+      //To add a loading animation
+      $mainContainer
       .append('<embed src="images/loadingGIF/spin.svg" type="image/svg+xml" style="position:absolute; top:45%; left: 50%; z-index: 9999;" />')
       
-      $('#section-container')
+      //To hide the contents being rendered. 
+      $sectionContainer
       .html(data)
       .children()
       .hide()
-      //.fadeOut(400,function(){$(this).html(data)});
-      //.html(data)
 
       setTimeout(function(){ 
           $projectlink = $('#work li a');
-          $projectlink.on('click', openProjectDetail);
-
-          $('#section-container').children().fadeIn(250);
+          $projectlink.on('click', openProjectDetail); //To register an event when page loaded by AJAX
+          $sectionContainer.children().fadeIn(250);
           $('.main-container embed').remove();
-          $('#section-container').css({height:"auto"})
+          $sectionContainer.css({height:"auto"})
       }, 500)
 
-      //This prevents the page from being at the top when going to main
       if(! $wrapperLR.hasClass('main-on')){
+
+        //This prevents the home page from getting at the top at the moment of starting going to main page for mobile size.
         $wrapperLR.addClass('main-on keepstate-forth');
-        $closebtn.addClass('main-on');
+
+        // To add a button to close main page for mobile size.
+        $closebtn.addClass('main-on');  
+
         setTimeout(function(){
           $wrapperLR.removeClass('keepstate-forth');
           $(window).scrollTop(0);
@@ -112,7 +114,6 @@
       history.pushState({},"", url);
     }
 
-
     // To mark the only link selected
     var $selectedLink = $(this);
     var $unselectedLink =$btnToSection.not($selectedLink);
@@ -124,7 +125,6 @@
     var url = $(this).attr('href');
     console.log(url);
     $('.ajaxdata-container').css({ height : '0px' });
-    //$('#section-container').load(url, {ajax : true} ,function(){console.log('hey')} );
     $.ajax({
       url:url,
       data : {ajax : true},
@@ -155,23 +155,11 @@
     $btnToSection.removeClass('selected');
   }
 
+  //Register events.
   $btnToSection.on('click', openSection);
-
   $btnToHome.on('click', backToHome);
-
   $projectlink.on('click', openProjectDetail);
-
   $('#close-project-detail').on('click', closeProjectDetail);
+
 })();
 
-/*
-
-  // To show the page clicked
-  var $sectionId = $(this).data("sectionId");
-  var $selectedSection = $($sectionId);
-  $selectedSection.addClass("active");
-
-  // To hide the pages not clicked
-  var $unselectedSections = $('section:not(' + $sectionId + ')');
-  $unselectedSections.removeClass('active');
-*/
