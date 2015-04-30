@@ -128,12 +128,18 @@ a:hover {
           margin-bottom: 7%;
         }
 
+        h2 {
+          color: gray;
+        }
+
         p {
           font-size: 1.5rem !important;
+          color: gray;
 
           a {
             font-size: 2.0rem;
             font-family: 'Jura', sans-serif;
+            color: gray;
             background-color:whitesmoke;
             padding:2%;
             line-height: 1.2;
@@ -264,6 +270,18 @@ a:hover {
 @media #{$screen-xs-max} {
 
   .main-container{
+
+    #work {
+      .ajaxdata-container{
+        background-color:white;
+
+        #ajaxdata{
+          p a{ 
+            background-color:white;
+          }
+        }
+      }
+    }
 
     #work li figure{
       background-color:white - #181818;

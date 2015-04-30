@@ -110,12 +110,17 @@ a:hover {
 .main-container #work .ajaxdata-container #ajaxdata * {
   margin-bottom: 7%;
 }
+.main-container #work .ajaxdata-container #ajaxdata h2 {
+  color: gray;
+}
 .main-container #work .ajaxdata-container #ajaxdata p {
   font-size: 1.5rem !important;
+  color: gray;
 }
 .main-container #work .ajaxdata-container #ajaxdata p a {
   font-size: 2.0rem;
   font-family: 'Jura', sans-serif;
+  color: gray;
   background-color: whitesmoke;
   padding: 2%;
   line-height: 1.2;
@@ -222,6 +227,12 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+  .main-container #work .ajaxdata-container {
+    background-color: white;
+  }
+  .main-container #work .ajaxdata-container #ajaxdata p a {
+    background-color: white;
+  }
   .main-container #work li figure {
     background-color: #e7e7e7;
   }

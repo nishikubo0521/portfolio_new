@@ -15,13 +15,13 @@
   * Open the window to show the project detail on #work section
   */
 
+  var height = 50;
   var openProjectDetail = function(e){
 
     e.preventDefault();
 
     var loadingDuration = 720;
     var wait = 300; //To load innerHeight of #ajaxheight
-    var height = 50;
     var url =  $(this).attr('href');
     var $body = $('body, html');
     var $ajaxdataContainer = $('.ajaxdata-container');
@@ -60,7 +60,7 @@
   * Moving Animation to go to a section in main page.
   */
   var openSection = function(e){
-
+    height = 50;
     var complete = function(data){
       //var part = $(data).find('section');
       $('#section-container').css({height:"100vh"})
