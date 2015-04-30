@@ -63,6 +63,7 @@
 
     var complete = function(data){
       //var part = $(data).find('section');
+      $('#section-container').css({height:"100vh"})
 
       var datapart = $(data).find('section');
       console.log(datapart);
@@ -73,14 +74,18 @@
       .append('<embed src="images/loadingGIF/spin.svg" type="image/svg+xml" style="position:absolute; top:45%; left: 50%; z-index: 9999;" />')
       
       $('#section-container')
-      .hide()
       .html(data)
+      .children()
+      .hide()
+      //.fadeOut(400,function(){$(this).html(data)});
+      //.html(data)
 
       setTimeout(function(){ 
           $projectlink = $('#work a');
           $projectlink.on('click', openProjectDetail);
-          $('#section-container').show();
+          $('#section-container').children().fadeIn(250);
           $('.main-container embed').remove();
+          $('#section-container').css({height:"auto"})
       }, 500)
 
       //This prevents the page from being at the top when going to main
