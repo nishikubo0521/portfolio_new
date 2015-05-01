@@ -11,6 +11,7 @@ p {
   font-size: 2.0rem !important;
   line-height: 1.5 !important;
   font-weight: 300;
+  color: black;
 }
 
 strong {
@@ -126,7 +127,7 @@ a:hover {
   margin-bottom: 7%;
 }
 .main-container #work .ajaxdata-container #ajaxdata h2 {
-  color: gray;
+  color: dimgray;
   font-size: 1.9rem;
   margin-bottom: 6%;
   text-align: bottom;
@@ -135,7 +136,7 @@ a:hover {
   float: left;
 }
 .main-container #work .ajaxdata-container #ajaxdata h3 {
-  color: gray;
+  color: dimgray;
   border-bottom: solid 1px #CDCDCD;
   font-size: 1.4rem;
   padding-bottom: 3%;
@@ -149,7 +150,7 @@ a:hover {
 .main-container #work .ajaxdata-container #ajaxdata p a {
   font-size: 1.4rem;
   font-family: 'Jura', sans-serif;
-  color: black;
+  color: dimgray;
   background-color: whitesmoke;
   padding: 1.5% 5%;
   line-height: 1.2;

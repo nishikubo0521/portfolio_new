@@ -1,5 +1,7 @@
 $purple:#851c7a;
 $projectDetailColor : black;
+$projectDetailButtonColor : dimgray;
+$projectDetailHeadingColor : dimgray;
 //breakpoints
 $screen-xs-max: "only screen and (max-width : 767px)";
 $screen-sm-min: "only screen and (min-width : 768px)";
@@ -19,13 +21,16 @@ p {
   //font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   //font-family: 'Raleway', sans-serif;
   font-family: 'Lato', sans-serif;
+  //font-family: 'Jura', sans-serif;
   font-size: 2.0rem !important;
   line-height: 1.5 !important;
   //font-weight: 300;
   font-weight: 300;
+  color: black;
 }
 
 strong {
+  //font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
@@ -149,7 +154,7 @@ a:hover {
         }
 
         h2 {
-          color: gray;
+          color: $projectDetailHeadingColor;
           font-size: 1.9rem;
           margin-bottom: 6%;
           text-align: bottom;
@@ -160,7 +165,7 @@ a:hover {
         }
 
         h3{
-          color: gray;
+          color: $projectDetailHeadingColor;
           border-bottom: solid 1px #CDCDCD;
           font-size: 1.4rem;
           padding-bottom:3%;
@@ -175,7 +180,7 @@ a:hover {
           a {
             font-size: 1.4rem;
             font-family: 'Jura', sans-serif;
-            color: $projectDetailColor;
+            color: $projectDetailButtonColor;
             background-color:whitesmoke;
             padding:1.5% 5%;
             line-height: 1.2;
