@@ -183,7 +183,7 @@
   /*
   * To load contents when 'back' or 'forward' is pushed
   */
-  var popstateFunc = function(){
+  var popstateFunc = function(e){
 
     var urlPatternOfProject = new RegExp('work/.+');
     var urlPatternOfSection = new RegExp('/.+');
