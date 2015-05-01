@@ -22,11 +22,10 @@
   * Open the window to show the project detail on #work section.
   */
   var openProjectDetail = function(e){
-
-    e.preventDefault();
+    if(e) e.preventDefault();
 
     var loadingDuration = 720;
-    var wait = 300; //To load innerHeight of #ajaxheight.
+    var wait = 300; //To load innerHeight of #ajaxheight
     var url =  $(this).attr('href');
     var $body = $('body, html');
     var $ajaxdataContainer = $('.ajaxdata-container');
@@ -43,18 +42,20 @@
         $ajaxdata.html($ajaxdataContents);
 
         setTimeout(function(){
-          //To register event when loaded.
+          //To register event when loaded
           $('#close-project-detail').on('click', closeProjectDetail); 
           $ajaxdata.animate({ opacity:1 }, loadingDuration);
 
-          //To keep the height of previous window so that the window is not closed every time.
+          //To keep the height of previous window so that the window is not closed every time
           ProjectDetailWindowHeight = $ajaxdata.innerHeight();
           ProjectDetailWindowHeight = ProjectDetailWindowHeight + "px";
           console.log(ProjectDetailWindowHeight);
 
-          //To animate to change the hight that the nexet project window has.
+          //To animate to change the hight that the nexet project window has
           $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight }, loadingDuration );
-          history.pushState({},"", url);
+
+          //Only for click event
+          if(e) history.pushState({},"", url);
         }, wait);
       });
     }
@@ -80,6 +81,7 @@
   */
   var openSection = function(e){
     ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
+    var $dfd = $.Deferred();
 
     var complete = function(data){
 
@@ -101,10 +103,12 @@
           $projectlink.on('click', openProjectDetail); //To register an event when page loaded by AJAX
           $sectionContainer.children().fadeIn(250);
           $('.main-container embed').remove();
-          $sectionContainer.css({height:"auto"})
+          $sectionContainer.css({height:"auto"});
+
+          $dfd.resolve();
       }, 500 )
 
-      if(! $wrapperLR.hasClass('main-on')){
+      if( ! $wrapperLR.hasClass('main-on') ){
 
         //This prevents the home page from getting at the top at the moment of starting going to main page for mobile size.
         $wrapperLR.addClass('main-on keepstate-forth');
@@ -118,10 +122,8 @@
         }, animationDuration);
       }
       else{
-          $(window).scrollTop(0);
+        $(window).scrollTop(0);
       }
-
-      history.pushState({},"", url);
     }
 
     // To mark the only link selected
@@ -131,21 +133,34 @@
     $btnToHome.removeClass('selected');
     $unselectedLink.removeClass('selected');
 
-    e.preventDefault();
     var url = $(this).attr('href');
     console.log(url);
+    if(e) {
+      e.preventDefault();
+      history.pushState({},"", url);
+    }
+
     $('.ajaxdata-container').css({ height : '0px' });
     $.ajax({
       url:url,
       data : {ajax : true},
       dataType: 'html'
     }).done(complete);
+
+    return $dfd.promise();
   }
 
   /*
   * Moving Animation to go to home page.
   */
-  var backToHome = function(){
+  var backToHome = function(e){
+
+    // Does not happen when popstating.
+    if(e){
+      e.preventDefault();
+      var url = $(this).attr('href');
+      history.pushState({}, "", url);
+    }
 
     if($wrapperLR.hasClass('main-on')){
       $wrapperLR.addClass('keepstate-back');
@@ -165,11 +180,41 @@
     $btnToSection.removeClass('selected');
   }
 
+  /*
+  * To load contents when 'back' or 'forward' is pushed
+  */
+  var popstateFunc = function(){
+
+    var urlPatternOfProject = new RegExp('work/.+');
+    var urlPatternOfSection = new RegExp('/.+');
+    var url = window.location.pathname;
+    var tempDOM = $('<div href="'+ url +'" />');
+
+    if (url.match(urlPatternOfProject)){
+      console.log('project');
+      var tempDOM2 = $btnToSection.filter('[href="/work"]');
+      openSection.apply(tempDOM2).done(openProjectDetail.bind(tempDOM));
+    }
+    else{
+
+      if (url.match(urlPatternOfSection)){
+        console.log('section');
+        var $tempDOM2 = $btnToSection.filter('[href="' + url + '"]');
+        openSection.apply($tempDOM2);
+      }
+      else{
+        console.log('home');
+        backToHome();
+      }
+    }
+  }
+
   //Register events.
   $btnToSection.on('click', openSection);
   $btnToHome.on('click', backToHome);
   $projectlink.on('click', openProjectDetail);
   $('#close-project-detail').on('click', closeProjectDetail);
+  $(window).on('popstate', popstateFunc);
 
 })();
 

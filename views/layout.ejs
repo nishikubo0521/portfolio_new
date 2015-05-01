@@ -25,7 +25,7 @@
       <div class="navigation-container">
         <nav>
           <ul>
-            <li><a class="btn-to-home <% if(directAccess == false) { %> selected <% } %>">home</a></li>
+            <li><a href="/" class="btn-to-home <% if(directAccess == false) { %> selected <% } %>">home</a></li>
             <li><a href="/work" class="btn-to-section <%= (isActive.work) ? 'selected' : '' %>" data-section-id="#work">work</a></li>
             <li><a href="/aboutme" class="btn-to-section <%= (isActive.aboutme) ? 'selected' : '' %>" data-section-id="#aboutme">about me</a></li>
             <li><a href="/contacts" class="btn-to-section <%= (isActive.contacts) ? 'selected' : '' %>" data-section-id="#contacts">contacts</a></li>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <i class="ion-ios-close-outline btn-to-home closebtn <%= state.mainOn %>"></i>
+    <a href="/" class="btn-to-home closebtn <%= state.mainOn %>"><i class="ion-ios-close-outline"></i></a>
 
     <div class="wrapper-r <%= state.mainOn %>">
       <div class="main-container">
