@@ -1,6 +1,5 @@
 var express = require('express'),
-    app = express(),
-    router = express.Router();
+    app = express();
 var port = process.env.PORT || 8000,
     json = require('./data.json'),
     projects = json.projects;

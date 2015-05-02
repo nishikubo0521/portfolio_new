@@ -13,8 +13,8 @@
   var animationDurationProperty = $wrapperLR.css('transition-duration');
   var animationDuration = 1000 * parseFloat(animationDurationProperty.replace('s',''));
 
-   // The height of project detail window when loading contents.
-   // (FIXME: When page is directly loaded, now it closes the window to 50px).
+  // The height of project detail window when loading contents.
+  // (FIXME: When page is directly loaded, now it closes the window to 50px).
   var initialProjectDetailWindowHeight = 50;
   var ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
 

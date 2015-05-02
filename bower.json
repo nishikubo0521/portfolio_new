@@ -13,9 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.4",
-    "jquery-pjax": "~1.9.6",
-    "pjax": "~0.2.1",
-    "jquery-ui": "jquery/jquery-ui#1.11.4"
+    "bootstrap": "~3.3.4"
   }
 }
