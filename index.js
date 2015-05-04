@@ -1,6 +1,7 @@
 var express = require('express'),
     app = express();
-    favicon = require('serve-favicon');
+var ejs = require('ejs');
+var favicon = require('serve-favicon');
 var port = process.env.PORT || 8000,
     json = require('./data.json'),
     projects = json.projects;
