@@ -1,9 +1,9 @@
-<% if (project) { %>
-<h2><%= project.name %><i id="close-project-detail" class="ion-ios-close-empty"></i></h2>
+<% if (requestedProjectDetail) { %>
+<h2><%= requestedProjectDetail.name %><i id="close-project-detail" class="ion-ios-close-empty"></i></h2>
 <figure>
-  <img src="<%= project.image %>" class="img-responsive center-block">
+  <img src="<%= requestedProjectDetail.image %>" class="img-responsive center-block">
 </figure>
 <h3 class="">Discription</h2>
-<p id="description" class=""><%= project.description %></p>
-<p class="text-center"><a class="btn btn-default" href="<%= project.website %>" target="_brank" >SITE LINK</a></p>
+<p id="description" class=""><%= requestedProjectDetail.description %></p>
+<p class="text-center"><a class="btn btn-default" href="<%= requestedProjectDetail.website %>" target="_brank" >SITE LINK</a></p>
 <% } %>

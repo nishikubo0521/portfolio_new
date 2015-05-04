@@ -1,15 +1,9 @@
-<section id="work" class="row <%= state.active %>">
+<section id="work" class="row">
   <h1 class="text-center">MY WORK</h1>
   <div class="col-md-12">
-    <div class="ajaxdata-container" style="height:<%= (directAccess && ( project != null ) )? "auto" : 0 %>">
+    <div class="ajaxdata-container" style="height:<%= ( requestedProjectDetail != null )? "auto" : 0 %>">
       <div id="ajaxdata" class="">
-        <% if ( pjax != true) { %>
-          <% if ( directAccess == true ) { %> 
-            <% include project-detail %>
-          <% } %>
-        <% } else { %>
-          <% include project-detail %>
-        <% } %>
+        <% include project-detail %>
       </div>
     </div>    
   </div>
