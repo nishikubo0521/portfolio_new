@@ -2,17 +2,18 @@ var express = require('express'),
     app = express();
 var ejs = require('ejs');
 var favicon = require('serve-favicon');
-var port = process.env.PORT || 8000,
-    json = require('./data.json'),
+var port = process.env.PORT || 8000;
+var json = require('./data.json'),
     projects = json.projects;
 
-var resObj = {};
+///Initializes request information object and determines if the request is sent by AJAX
+var isAJAX = function(req, res, next) {
 
-var router = function(req, res, next) {
+  // For debugging
+  req.log = "";
 
-  var log = "";
-
-  resObj = {
+  //Initialize
+  req.info = {
     isAJAX : false,
     requestedPage : "",
     projects : projects,
@@ -20,35 +21,46 @@ var router = function(req, res, next) {
   }
 
   if (req.query.ajax) {
-    resObj.isAJAX = true;
+    req.info.isAJAX = true;
   }
 
-  log += 'ajax: ' + resObj.isAJAX + '\n';
-
-  if (req.params.path) {
-    resObj.requestedPage = req.params.path;
-
-    log += 'requestedPage: ' + resObj.requestedPage + '\n';
-  }
-
-  if (req.params.project) {
-
-    resObj.requestedPage = 'work';
-
-    for(var i = 0; i < projects.length; i++){
-      if( projects[i].path == '/work/' + req.params.project ){
-        resObj.requestedProjectDetail = projects[i];
-      }
-    }
-
-    log += 'requestedPage: ' + resObj.requestedPage + '\n';
-    log += 'requestedProjectDetail: ' + resObj.requestedProjectDetail.name + '\n';
-  }
-
-  console.log(log);
+  req.log += 'ajax: ' + req.info.isAJAX + '\n';
 
   next();
-};
+}
+
+//Adds a requested section to request information object
+var sectionRequestHandler = function(req, res, next) {
+
+  req.info.requestedPage = req.params.path;
+
+  req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
+
+  next();
+}
+
+//Adds a requested project detail to request information object
+var projectRequestHandler = function(req, res, next){
+
+  req.info.requestedPage = 'work';
+
+  for(var i = 0; i < projects.length; i++){
+    if( projects[i].path == '/work/' + req.params.project ){
+      req.info.requestedProjectDetail = projects[i];
+    }
+  }
+
+ req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
+ req.log += 'requestedProjectDetail: ' + req.info.requestedProjectDetail.name + '\n';
+
+  next();
+}
+
+//Renders content based on request information
+var layout = function(req, res){
+  console.log(req.log)
+  res.render('layout', req.info);
+}
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.static('public'));
@@ -58,9 +70,13 @@ app.use('/work', express.static('bower_components'));
 app.set('views', process.env.PWD + "/views");
 app.set('view engine', 'ejs');
 
-app.get(['/','/:path','/work/:project'], router, function(req, res){
-  res.render('layout', resObj);
-});
+//middleware which determines if it is AJAX request
+app.get(['/', '/:path', '/work/:project'], isAJAX);
+
+//routing
+app.get('/', layout);
+app.get('/:path', sectionRequestHandler, layout);
+app.get('/work/:project', projectRequestHandler, layout);
 
 app.listen(port);
 console.log('listening to port:' + port);
