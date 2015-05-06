@@ -11,7 +11,7 @@
     <% var index = 0; projects.forEach(function(project){ %>
       <li class="col-xs-6 col-sm-6 col-md-4">
         <figure>
-          <a href="<%= project.path %>" data-index = '<%= index %>'>
+          <a href="<%= project.path %>" data-index = '<%= index %>' class="projectlink">
             <img src="<%= project.thumbnail %>" alt="<%= project.alt %>" class="img-responsive center-block">
             <figcaption class="text-center"><%= project.name %></figcaption>
           </a>

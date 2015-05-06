@@ -16,8 +16,9 @@
   width: 100%;
   height: 100%;
 }
-.wrapper-l .header-container,
-.wrapper-l .navigation-container {
+
+.header-container,
+.navigation-container {
   float: none;
   width: 100%;
   height: 50%;
@@ -46,37 +47,30 @@
   transition: transform ease .5s;
 }
 
-.keepstate-to-main.wrapper-r {
-  position: fixed !important;
-}
-
-.main-on.wrapper-r,
-.main-on.wrapper-l {
+.main-on .wrapper-r,
+.main-on .wrapper-l {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
-.main-on.wrapper-r {
+.main-on .wrapper-r {
   position: absolute;
 }
 
-.keepstate-to-home.wrapper-l {
+.main-on .closebtn {
+  display: block;
+}
+
+.keepstate-to-main .wrapper-r {
   position: fixed !important;
 }
 
-.keepstate-to-home.wrapper-r {
-  position: absolute;
+.keepstate-to-home .wrapper-l {
+  position: fixed !important;
 }
 
-/*#work,
-#aboutme,
-#contacts{
-  display: none;
-}*/
-.active#work,
-.active#aboutme,
-.active#contacts {
-  display: block;
+.keepstate-to-home .wrapper-r {
+  position: absolute;
 }
 
 .closebtn {
@@ -87,13 +81,9 @@
   display: none;
 }
 
-.main-on.closebtn {
-  display: block;
-}
-
 @media only screen and (min-width: 768px) {
-  .wrapper-l .header-container,
-  .wrapper-l .navigation-container {
+  .header-container,
+  .navigation-container {
     float: left;
     width: 50%;
     height: 100%;
@@ -108,8 +98,8 @@
   /* 
   * Animation style
   */
-  .main-on.wrapper-r,
-  .main-on.wrapper-l {
+  .main-on .wrapper-r,
+  .main-on .wrapper-l {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
@@ -122,15 +112,18 @@
   .wrapper-l {
     position: fixed;
   }
-  .wrapper-l .header-container,
-  .wrapper-l .navigation-container {
+
+  .header-container,
+  .navigation-container {
     float: left;
     height: 100%;
   }
-  .wrapper-l .header-container {
+
+  .header-container {
     width: 77%;
   }
-  .wrapper-l .navigation-container {
+
+  .navigation-container {
     width: 23%;
   }
 
@@ -146,12 +139,12 @@
   /* 
   * Animation style
   */
-  .main-on.wrapper-l {
+  .main-on .wrapper-l {
     -webkit-transform: translateX(-77%) !important;
     transform: translateX(-77%) !important;
   }
 
-  .main-on.wrapper-r {
+  .main-on .wrapper-r {
     -webkit-transform: translateX(29.87013%) !important;
     transform: translateX(29.87013%) !important;
     position: absolute;

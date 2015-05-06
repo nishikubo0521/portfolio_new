@@ -14,9 +14,9 @@
   <link rel="stylesheet" type="text/css" href="/styles/css/core.css">
   <link rel="stylesheet" type="text/css" href="/styles/css/layout.css">
 </head>
-<body>
+<body class="<%= (requestedPage != "") ? "main-on" : "" %>">
   <div class="wrapper">
-    <div class="wrapper-l <%= (requestedPage != "") ? "main-on" : "" %>">
+    <div class="wrapper-l">
       <div class="header-container">
         <header>
           <h1><span>Naoki</span><span>Nishikubo's</span><span>Portfolio</span></h1>
@@ -35,9 +35,9 @@
       </div>
     </div>
 
-    <a href="/" class="btn-to-home closebtn <%= (requestedPage != "") ? "main-on" : "" %>"><i class="ion-ios-close-outline"></i></a>
+    <a href="/" class="btn-to-home closebtn"><i class="ion-ios-close-outline"></i></a>
 
-    <div class="wrapper-r <%= (requestedPage != "") ? "main-on" : "" %>">
+    <div class="wrapper-r">
       <div class="main-container">
         <main>
           <div id="section-container">

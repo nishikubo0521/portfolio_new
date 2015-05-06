@@ -5,10 +5,8 @@
   var $wrapperLR = $('.wrapper-l, .wrapper-r'); // The 2 classes wrap header, navigation, and main container.
   var $mainContainer = $('.main-container');
   var $sectionContainer = $('#section-container');
-  var $section = $('section');
   var $btnToHome = $('.btn-to-home'); // Mobile close btn and home link have this class.
-  var $closebtn = $('.closebtn'); // Mobile close btn.
-  var $projectlink = $('#work li a'); // Need to add event to this twice (for Ajax and Pageload).
+  var $projectlink = $('.projectlink'); // Need to add event to this twice (for Ajax and Pageload).
 
   // Duration of animation btween wrapperLR
   var animationDurationProperty = $wrapperLR.css('transition-duration');
@@ -38,6 +36,7 @@
       $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight + 'px'}, loadingDuration);
 
       $ajaxdata.animate({ opacity:0 }, loadingDuration, function(){
+        
         //To load html contents before showing
         $ajaxdata.html($ajaxdataContents);
 
@@ -99,7 +98,7 @@
       .hide()
 
       setTimeout(function(){ 
-          $projectlink = $('#work li a');
+          $projectlink = $('.projectlink');
           $projectlink.on('click', openProjectDetail); //To register an event when page loaded by AJAX
           $sectionContainer.children().fadeIn(250);
           $('.main-container embed').remove();
@@ -108,16 +107,13 @@
           $dfd.resolve();
       }, 500 )
 
-      if( ! $wrapperLR.hasClass('main-on') ){
+      if( ! $body.hasClass('main-on') ){
 
         //This prevents the home page from getting at the top at the moment of starting going to main page for mobile size.
-        $wrapperLR.addClass('main-on keepstate-to-main');
-
-        // To add a button to close main page for mobile size.
-        $closebtn.addClass('main-on');  
+        $body.addClass('main-on keepstate-to-main');
 
         setTimeout(function(){
-          $wrapperLR.removeClass('keepstate-to-main');
+          $body.removeClass('keepstate-to-main');
           $(window).scrollTop(0);
         }, animationDuration);
       }
@@ -162,21 +158,17 @@
       history.pushState({}, "", url);
     }
 
-    if($wrapperLR.hasClass('main-on')){
-      $wrapperLR.addClass('keepstate-to-home');
+    if($body.hasClass('main-on')){
       $body.addClass('keepstate-to-home');
-      $wrapperLR.removeClass('main-on');
-      $closebtn.removeClass('main-on');
+      $body.removeClass('main-on');
 
       setTimeout(function(){
-        $section.removeClass('active');
-        $wrapperLR.removeClass('keepstate-to-home');
         $body.removeClass('keepstate-to-home');
         $(window).scrollTop(0);
       }, animationDuration);
     }
 
-    $btnToHome.not($closebtn).addClass('selected');
+    $btnToHome.not('.closebtn').addClass('selected');
     $btnToSection.removeClass('selected');
   }
 
