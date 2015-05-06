@@ -164,14 +164,14 @@
 
     if($wrapperLR.hasClass('main-on')){
       $wrapperLR.addClass('keepstate-to-home');
-      $('body').addClass('keepstate-to-home');
+      $body.addClass('keepstate-to-home');
       $wrapperLR.removeClass('main-on');
       $closebtn.removeClass('main-on');
 
       setTimeout(function(){
         $section.removeClass('active');
         $wrapperLR.removeClass('keepstate-to-home');
-        $('body').removeClass('keepstate-to-home');
+        $body.removeClass('keepstate-to-home');
         $(window).scrollTop(0);
       }, animationDuration);
     }
