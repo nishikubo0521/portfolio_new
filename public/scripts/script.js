@@ -1,5 +1,6 @@
 (function(){
   
+  var $body = $('body, html');
   var $btnToSection = $(".btn-to-section"); //Nav links have this class.
   var $wrapperLR = $('.wrapper-l, .wrapper-r'); // The 2 classes wrap header, navigation, and main container.
   var $mainContainer = $('.main-container');
@@ -27,7 +28,6 @@
     var loadingDuration = 720;
     var wait = 300; //To load innerHeight of #ajaxheight
     var url =  $(this).attr('href');
-    var $body = $('body, html');
     var $ajaxdataContainer = $('.ajaxdata-container');
     console.log(url);
 
@@ -111,13 +111,13 @@
       if( ! $wrapperLR.hasClass('main-on') ){
 
         //This prevents the home page from getting at the top at the moment of starting going to main page for mobile size.
-        $wrapperLR.addClass('main-on keepstate-forth');
+        $wrapperLR.addClass('main-on keepstate-to-main');
 
         // To add a button to close main page for mobile size.
         $closebtn.addClass('main-on');  
 
         setTimeout(function(){
-          $wrapperLR.removeClass('keepstate-forth');
+          $wrapperLR.removeClass('keepstate-to-main');
           $(window).scrollTop(0);
         }, animationDuration);
       }
@@ -163,15 +163,15 @@
     }
 
     if($wrapperLR.hasClass('main-on')){
-      $wrapperLR.addClass('keepstate-back');
-      $('body').addClass('keepstate-back');
+      $wrapperLR.addClass('keepstate-to-home');
+      $('body').addClass('keepstate-to-home');
       $wrapperLR.removeClass('main-on');
       $closebtn.removeClass('main-on');
 
       setTimeout(function(){
         $section.removeClass('active');
-        $wrapperLR.removeClass('keepstate-back');
-        $('body').removeClass('keepstate-back');
+        $wrapperLR.removeClass('keepstate-to-home');
+        $('body').removeClass('keepstate-to-home');
         $(window).scrollTop(0);
       }, animationDuration);
     }
@@ -224,7 +224,7 @@
   $(window).on('popstate', popstateFunc);
 
   //Initial pushstate
-  history.pushState({}, "", '/');
+  history.pushState({}, "", window.location.pathname);
 
 })();
 

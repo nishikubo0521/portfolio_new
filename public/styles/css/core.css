@@ -46,7 +46,7 @@
   transition: transform ease .5s;
 }
 
-.keepstate-forth.wrapper-r {
+.keepstate-to-main.wrapper-r {
   position: fixed !important;
 }
 
@@ -60,11 +60,11 @@
   position: absolute;
 }
 
-.keepstate-back.wrapper-l {
+.keepstate-to-home.wrapper-l {
   position: fixed !important;
 }
 
-.keepstate-back.wrapper-r {
+.keepstate-to-home.wrapper-r {
   position: absolute;
 }
 

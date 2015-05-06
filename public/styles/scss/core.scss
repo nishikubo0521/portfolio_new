@@ -78,7 +78,7 @@ $main-md-width: $header-md-width;
   transition: transform ease .5s;
 }
 
-.keepstate-forth.wrapper-r {
+.keepstate-to-main.wrapper-r {
   position: fixed !important; //For main to be seen at the top while going to main;
 }
 
@@ -92,11 +92,11 @@ $main-md-width: $header-md-width;
   position: absolute;
 }
 
-.keepstate-back.wrapper-l {
+.keepstate-to-home.wrapper-l {
   position: fixed !important; //For home to be seen at the top while going back to home;
 }
 
-.keepstate-back.wrapper-r{
+.keepstate-to-home.wrapper-r{
   position: absolute;
 }
 
@@ -196,7 +196,7 @@ $main-md-width: $header-md-width;
     //position:fixed;
   }
 
-  .keepstate-back.wrapper-l {
+  .keepstate-to-home.wrapper-l {
     //position: absolute !important; //For home to be seen at the top while going back to home;
   }
 
