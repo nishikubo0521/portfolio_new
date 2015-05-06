@@ -90,7 +90,7 @@
 
       //To add a loading animation
       $mainContainer
-      .append('<embed src="images/loadingGIF/spin.svg" type="image/svg+xml" style="position:absolute; top:45%; left: 50%; z-index: 9999;" />')
+      .append('<embed src="/images/loadingGIF/spin.svg" type="image/svg+xml" style="position:absolute; top:45%; left: 50%; z-index: 9999;" />')
       
       //To hide the contents being rendered. 
       $sectionContainer
@@ -181,32 +181,39 @@
   }
 
   /*
-  * To load contents when 'back' or 'forward' is pushed
+  * Load contents when 'back' or 'forward' button is pushed
   */
   var popstateFunc = function(e){
 
-    var urlPatternOfProject = new RegExp('work/.+');
-    var urlPatternOfSection = new RegExp('/.+');
-    var url = window.location.pathname;
-    var tempDOM = $('<div href="'+ url +'" />');
+    var loadContents = function(){
 
-    if (url.match(urlPatternOfProject)){
-      console.log('project');
-      var tempDOM2 = $btnToSection.filter('[href="/work"]');
-      openSection.apply(tempDOM2).done(openProjectDetail.bind(tempDOM));
-    }
-    else{
+      var urlPatternOfProject = new RegExp('work/.+');
+      var urlPatternOfSection = new RegExp('/.+');
+      var url = window.location.pathname;
+      var tempDOM = $('<div href="'+ url +'" />');
 
-      if (url.match(urlPatternOfSection)){
-        console.log('section');
-        var $tempDOM2 = $btnToSection.filter('[href="' + url + '"]');
-        openSection.apply($tempDOM2);
+      if (url.match(urlPatternOfProject)){
+        console.log('project');
+        var tempDOM2 = $btnToSection.filter('[href="/work"]');
+        openSection.apply(tempDOM2).done(openProjectDetail.bind(tempDOM));
       }
       else{
-        console.log('home');
-        backToHome();
+
+        if (url.match(urlPatternOfSection)){
+          console.log('section');
+          var $tempDOM2 = $btnToSection.filter('[href="' + url + '"]');
+          openSection.apply($tempDOM2);
+        }
+        else{
+          console.log('home');
+          backToHome();
+        }
       }
     }
+
+    if(e.originalEvent.state !== null){
+      loadContents();
+    }    
   }
 
   //Register events.

@@ -4,8 +4,8 @@
       "name":"Chloe Ulis",
       "website":"http://chloeulis.com/",
       "path":"/work/chloe-ulis",
-      "thumbnail":"images/thumnails/thumbnail-chloeulis.png",
-      "image":"images/large/chloeulis.png",
+      "thumbnail":"/images/thumnails/thumbnail-chloeulis.png",
+      "image":"/images/large/chloeulis.png",
       "alt":"Chloe Ulis Portfolio Website",
       "description":"Chloe Ulis Art Portfolio and School Business site was designed and developed by Kaleidovision, where I acted as Lead Engineer. My responsibilities focused on creating Wordpress templates implementing custom post types and advance custom fields, testing plugins, and setting up hosting server, while providing support on client liaison, design work, and content management."
     },
@@ -13,8 +13,8 @@
       "name":"BCIT HTP",
       "website":"http://nnishikubo.htpwebdesign.ca/bcit_htp/",
       "path":"/work/bcit-htp",
-      "thumbnail":"images/thumnails/thumbnail-bcit-htp.png",
-      "image":"images/large/bcit-htp.png",
+      "thumbnail":"/images/thumnails/thumbnail-bcit-htp.png",
+      "image":"/images/large/bcit-htp.png",
       "alt":"BCIT High-Tech Professional Programs",
       "description":"This was a group project where I acted as Lead Engineer in which my responsibilites focused on marking up contents with HTML5, creating animation with Javascript, while provided support on design work and art direction. We built this site using the BCIT colour and logo guidelines, with requests for a modern and responsive design, that had easy-to-read information. In addition we implementedFlexBox for this project and hope to implement and update the icons to SVG in the near future."
     },
@@ -22,8 +22,8 @@
       "name":"Previous Portfolio",
       "website":"http://nnishikubo.htpwebdesign.ca/previous-portfolio/",
       "path":"/work/previous-portfolio",
-      "thumbnail":"images/thumnails/thumbnail-previous-portfolio.png",
-      "image":"images/large/previous-portfolio.png",
+      "thumbnail":"/images/thumnails/thumbnail-previous-portfolio.png",
+      "image":"/images/large/previous-portfolio.png",
       "alt":"Previous Portfolio",
       "description":"This is my previous portfolio site built with HTML5 and CSS3 which I made simple for users to browse all contents quickly. I focuesd on selecting best fonts and colors cosulting 2 excellent designers."
     },
@@ -31,8 +31,8 @@
       "name":"Jquery Tutorial",
       "website":"http://nnishikubo.htpwebdesign.ca/tutorial/",
       "path":"/work/jquery-tutorial",
-      "thumbnail":"images/thumnails/thumbnail-jquery-tutorial.png",
-      "image":"images/large/jquery-tutorial.png",
+      "thumbnail":"/images/thumnails/thumbnail-jquery-tutorial.png",
+      "image":"/images/large/jquery-tutorial.png",
       "alt":"Jquery Tutorial",
       "description":"This is a jQuery tutorial website, where users can experience all the simple features implemented in the site itself. Also I focused on creating natural steps so the users do not finish the tutorial in the middle."
     },
@@ -40,8 +40,8 @@
       "name":"Dental Clinic",
       "website":"http://nnishikubo.htpwebdesign.ca/dental_clinic/",
       "path":"/work/dental-clinic",
-      "thumbnail":"images/thumnails/thumbnail-dental-clinic.png",
-      "image":"images/large/dental-clinic.png",
+      "thumbnail":"/images/thumnails/thumbnail-dental-clinic.png",
+      "image":"/images/large/dental-clinic.png",
       "alt":"N and B Dental Clinic",
       "description":"This is my first team project where I was working for design, information architecture, HTML5 and CSS3 implementing google map and a basic form. We also learned how to create business documentation assuming the situation with real clients."
     },
@@ -49,7 +49,7 @@
       "name":"Coming Soon",
       "website":"",
       "path":"/work",
-      "thumbnail":"images/thumnails/coming-soon.png",
+      "thumbnail":"/images/thumnails/coming-soon.png",
       "image":"",
       "alt":"",
       "description":""

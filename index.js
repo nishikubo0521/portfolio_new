@@ -29,7 +29,7 @@ var isAJAX = function(req, res, next) {
   next();
 }
 
-//Adds a requested section to request information object
+//Add a requested section to request information object
 var sectionRequestHandler = function(req, res, next) {
 
   req.info.requestedPage = req.params.path;
@@ -39,7 +39,7 @@ var sectionRequestHandler = function(req, res, next) {
   next();
 }
 
-//Adds a requested project detail to request information object
+//Add a requested project detail to request information object
 var projectRequestHandler = function(req, res, next){
 
   req.info.requestedPage = 'work';
@@ -56,21 +56,22 @@ var projectRequestHandler = function(req, res, next){
   next();
 }
 
-//Renders content based on request information
+//Render content based on request information
 var layout = function(req, res){
   console.log(req.log)
   res.render('layout', req.info);
 }
 
-app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(express.static('public'));
-app.use(express.static('bower_components'));
-app.use('/work', express.static('public'));
-app.use('/work', express.static('bower_components'));
+//Define a template engine to use
 app.set('views', process.env.PWD + "/views");
 app.set('view engine', 'ejs');
 
-//middleware which determines if it is AJAX request
+//Middleware for static files 
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static('public'));
+app.use(express.static('bower_components'));
+
+//Middleware which determines if the request is AJAX
 app.get(['/', '/:path', '/work/:project'], isAJAX);
 
 //routing
