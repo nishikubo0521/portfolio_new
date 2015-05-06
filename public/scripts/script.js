@@ -223,5 +223,8 @@
   $('#close-project-detail').on('click', closeProjectDetail);
   $(window).on('popstate', popstateFunc);
 
+  //Initial pushstate
+  history.pushState({}, "", '/');
+
 })();
 
