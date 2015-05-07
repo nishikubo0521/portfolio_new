@@ -33,7 +33,6 @@ var isAJAX = function(req, res, next) {
 var sectionRequestHandler = function(req, res, next) {
 
   req.info.requestedPage = req.params.path;
-
   req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
 
   next();

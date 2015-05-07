@@ -21,18 +21,19 @@
   * Open the window to show the project detail on #work section.
   */
   var openProjectDetail = function(e){
-    if(e) e.preventDefault();
 
     var loadingDuration = 720;
-    var wait = 300; //To load innerHeight of #ajaxheight
-    var url =  $(this).attr('href');
+    var wait = 250; //To load innerHeight of #ajaxheight. This makes a feeling better than $.ready..
+    var url =  $(this).attr('href'); console.log(url);
     var $ajaxdataContainer = $('.ajaxdata-container');
-    console.log(url);
+    var $ajaxdata = $('#ajaxdata');
 
+    /*
+    * AJAX success callback
+    */
     var startProjectAnimation = function(data){
-      var $ajaxdata = $('#ajaxdata');
-      var $ajaxdataContents = $(data).find('#ajaxdata > *');
-      $body.animate( {scrollTop:0}, loadingDuration);
+
+      var $ajaxdataContents = $(data).find('#ajaxdata > *'); //Reduce ajaxdata
       $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight + 'px'}, loadingDuration);
 
       $ajaxdata.animate({ opacity:0 }, loadingDuration, function(){
@@ -41,6 +42,7 @@
         $ajaxdata.html($ajaxdataContents);
 
         setTimeout(function(){
+
           //To register event when loaded
           $('#close-project-detail').on('click', closeProjectDetail); 
           $ajaxdata.animate({ opacity:1 }, loadingDuration);
@@ -53,10 +55,15 @@
           //To animate to change the hight that the nexet project window has
           $ajaxdataContainer.animate({ height : ProjectDetailWindowHeight }, loadingDuration );
 
-          //Only for click event
-          if(e) history.pushState({},"", url);
         }, wait);
+
       });
+    }
+
+    if(e) {
+      e.preventDefault();
+      history.pushState({},"", url);
+      $body.animate( {scrollTop: ($ajaxdataContainer.offset().top - 30) + 'px' }, loadingDuration);
     }
 
     $.ajax({
@@ -79,9 +86,16 @@
   * Moving Animation to go to a section in main page.
   */
   var openSection = function(e){
-    ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
-    var $dfd = $.Deferred();
 
+    var $selectedLink = $(this);
+    var $unselectedLink = $btnToSection.not($selectedLink);
+    var $dfd = $.Deferred();
+    var wait = 500; 
+    var url = $(this).attr('href'); console.log(url);
+
+    /*
+    * AJAX Success callback
+    */
     var complete = function(data){
 
       //To keep the height of main page for the background not to be lost.
@@ -95,17 +109,17 @@
       $sectionContainer
       .html(data)
       .children()
-      .hide()
+      .hide();
 
-      setTimeout(function(){ 
+      $sectionContainer.ready(function(){ 
           $projectlink = $('.projectlink');
           $projectlink.on('click', openProjectDetail); //To register an event when page loaded by AJAX
-          $sectionContainer.children().fadeIn(250);
+          $sectionContainer.children().fadeIn(500);
           $('.main-container embed').remove();
           $sectionContainer.css({height:"auto"});
 
           $dfd.resolve();
-      }, 500 )
+      });
 
       if( ! $body.hasClass('main-on') ){
 
@@ -122,15 +136,11 @@
       }
     }
 
-    // To mark the only link selected
-    var $selectedLink = $(this);
-    var $unselectedLink =$btnToSection.not($selectedLink);
+    ProjectDetailWindowHeight = initialProjectDetailWindowHeight;
     $selectedLink.addClass('selected');
     $btnToHome.removeClass('selected');
     $unselectedLink.removeClass('selected');
 
-    var url = $(this).attr('href');
-    console.log(url);
     if(e) {
       e.preventDefault();
       history.pushState({},"", url);
