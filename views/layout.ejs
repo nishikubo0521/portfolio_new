@@ -26,16 +26,16 @@
       <div class="navigation-container">
         <nav>
           <ul>
-            <li><a href="/" class="btn-to-home <%= (requestedPage == "") ? 'selected' : '' %>">home</a></li>
-            <li><a href="/work" class="btn-to-section <%= (requestedPage == "work") ? 'selected' : '' %>" data-section-id="#work">work</a></li>
-            <li><a href="/aboutme" class="btn-to-section <%= (requestedPage == "aboutme") ? 'selected' : '' %>" data-section-id="#aboutme">about me</a></li>
-            <li><a href="/contacts" class="btn-to-section <%= (requestedPage == "contacts") ? 'selected' : '' %>" data-section-id="#contacts">contacts</a></li>
+            <li><a href="/" class="homelink <%= (requestedPage == "") ? 'selected' : '' %>">home</a></li>
+            <li><a href="/work" class="sectionlink <%= (requestedPage == "work") ? 'selected' : '' %>" data-section-id="#work">work</a></li>
+            <li><a href="/aboutme" class="sectionlink <%= (requestedPage == "aboutme") ? 'selected' : '' %>" data-section-id="#aboutme">about me</a></li>
+            <li><a href="/contacts" class="sectionlink <%= (requestedPage == "contacts") ? 'selected' : '' %>" data-section-id="#contacts">contacts</a></li>
           </ul>
         </nav>
       </div>
     </div>
 
-    <a href="/" class="btn-to-home closebtn"><i class="ion-ios-close-outline"></i></a>
+    <a href="/" class="homelink closebtn"><i class="ion-ios-close-outline"></i></a>
 
     <div class="wrapper-r">
       <div class="main-container">
