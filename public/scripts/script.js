@@ -54,11 +54,10 @@ var PI = {
         $.body.addClass('main-on keepstate-to-main');
 
         setTimeout(function() {
-          $.body.removeClass('keepstate-to-main');
-          $(window).scrollTop(0);
+          $.body
+            .removeClass('keepstate-to-main')
+            .scrollTop(0);
         }, $.animationDuration);
-      } else {
-        $(window).scrollTop(0);
       }
     }
 
@@ -73,6 +72,7 @@ var PI = {
         .hide();
 
       setTimeout(function() {
+        $.body.scrollTop(0);
         $sectionContainer.children().fadeIn(500);
         $('.main-container embed').remove();
         $sectionContainer.css({
@@ -120,8 +120,9 @@ var PI = {
     }
 
     if ($.body.hasClass('main-on')) {
-      $.body.addClass('keepstate-to-home');
-      $.body.removeClass('main-on');
+      $.body
+        .addClass('keepstate-to-home')
+        .removeClass('main-on');
 
       setTimeout(function() {
         $.body
