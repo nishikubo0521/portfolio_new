@@ -8,16 +8,15 @@ var json = require('./data.json'),
 
 ///Initializes request information object and determines if the request is sent by AJAX
 var isAJAX = function(req, res, next) {
-
-  // For debugging
+  // For debug
   req.log = "";
 
   //Initialize
   req.info = {
-    isAJAX : false,
-    requestedPage : "",
-    projects : projects,
-    requestedProjectDetail : null
+    isAJAX: false,
+    requestedPage: "",
+    projects: projects,
+    requestedProjectDetail: null
   }
 
   if (req.query.ajax) {
@@ -31,7 +30,6 @@ var isAJAX = function(req, res, next) {
 
 //Add a requested section to request information object
 var sectionRequestHandler = function(req, res, next) {
-
   req.info.requestedPage = req.params.path;
   req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
 
@@ -39,24 +37,23 @@ var sectionRequestHandler = function(req, res, next) {
 }
 
 //Add a requested project detail to request information object
-var projectRequestHandler = function(req, res, next){
-
+var projectRequestHandler = function(req, res, next) {
   req.info.requestedPage = 'work';
 
-  for(var i = 0; i < projects.length; i++){
-    if( projects[i].path == '/work/' + req.params.project ){
+  for (var i = 0; i < projects.length; i++) {
+    if (projects[i].path == '/work/' + req.params.project) {
       req.info.requestedProjectDetail = projects[i];
     }
   }
 
- req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
- req.log += 'requestedProjectDetail: ' + req.info.requestedProjectDetail.name + '\n';
+  req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
+  req.log += 'requestedProjectDetail: ' + req.info.requestedProjectDetail.name + '\n';
 
   next();
 }
 
 //Render content based on request information
-var layout = function(req, res){
+var layout = function(req, res) {
   console.log(req.log)
   res.render('layout', req.info);
 }
