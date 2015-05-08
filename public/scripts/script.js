@@ -124,8 +124,9 @@ var PI = {
       $.body.removeClass('main-on');
 
       setTimeout(function() {
-        $.body.removeClass('keepstate-to-home');
-        $(window).scrollTop(0);
+        $.body
+          .scrollTop(0)
+          .removeClass('keepstate-to-home');
       }, $.animationDuration);
     }
 
