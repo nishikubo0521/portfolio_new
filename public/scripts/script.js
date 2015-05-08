@@ -16,7 +16,7 @@ var PI = {
 
     //Event listners
     $.homelink.on('click', PI.backToHome);
-    $.sectionlink.on('click', PI.openSection);
+    $.sectionlink.on('click', PI.goToSection);
     $(window).on('popstate', PI.popstateFunc);
 
     //Event listners for AJAX elements
@@ -27,9 +27,9 @@ var PI = {
   },
 
   /*
-   * Moving Animation to go to a section in main page.
+   * Moving Animation to go to a section in main page
    */
-  openSection: function(e) {
+  goToSection: function(e) {
     var $mainContainer = $('.main-container');
     var $sectionContainer = $('#section-container');
     var $selectedLink = $(this);
@@ -109,10 +109,10 @@ var PI = {
   },
 
   /*
-   * Moving Animation to go to home page.
+   * Moving Animation to go to home page
    */
   backToHome: function(e) {
-    // Does not happen when popstating
+    // This does not happen when popstating
     if (e) {
       e.preventDefault();
       var url = $(this).attr('href');
@@ -134,11 +134,11 @@ var PI = {
   },
 
   /*
-   * Open the window to show the project detail on #work section.
+   * Open the window to show the project detail on #work section
    */
   openProjectDetail: function(e) {
-    var loadingDuration = 720;
-    var wait = 250; //To load innerHeight of #ajaxheight. This makes a feeling better than $.ready..
+    var heightChangeDuration = 720;
+    var wait = 250; // To load innerHeight of #ajaxheight. This makes a feeling better than $.ready..
     var url = $(this).attr('href');
     console.log(url);
     var $ajaxdataContainer = $('.ajaxdata-container');
@@ -151,41 +151,42 @@ var PI = {
       var $ajaxdataContents = $(data).find('#ajaxdata > *'); //Reduce ajaxdata
       $ajaxdataContainer.animate({
         height: $.ProjectDetailWindowHeight + 'px'
-      }, loadingDuration);
+      }, heightChangeDuration);
 
       $ajaxdata.animate({
         opacity: 0
-      }, loadingDuration, function() {
+      }, heightChangeDuration, function() {
 
-        //To load html contents before showing
+        //Loads html contents before showing
         $ajaxdata.html($ajaxdataContents);
 
         setTimeout(function() {
           $ajaxdata.animate({
             opacity: 1
-          }, loadingDuration);
+          }, heightChangeDuration);
 
-          //To keep the height of previous window so that the window is not closed every time
+          //Keeps the height of previous window so that the window is not closed every time
           $.ProjectDetailWindowHeight = $ajaxdata.innerHeight();
           $.ProjectDetailWindowHeight = $.ProjectDetailWindowHeight + "px";
           console.log($.ProjectDetailWindowHeight);
 
-          //To animate to change the hight that the nexet project window has
+          //Animates to change the hight that the nexet project window has
           $ajaxdataContainer.animate({
             height: $.ProjectDetailWindowHeight
-          }, loadingDuration);
+          }, heightChangeDuration);
 
         }, wait);
 
       });
     }
 
+    //This does not happen when popstating
     if (e) {
       e.preventDefault();
       history.pushState({}, "", url);
       $.body.animate({
         scrollTop: ($ajaxdataContainer.offset().top - 30) + 'px'
-      }, loadingDuration);
+      }, heightChangeDuration);
     }
 
     $.ajax({
@@ -201,7 +202,7 @@ var PI = {
   },
 
   /*
-   * Close the project detail window.
+   * Close the project detail window
    */
   closeProjectDetail: function() {
     $('.ajaxdata-container').animate({
@@ -224,12 +225,12 @@ var PI = {
       if (url.match(urlPatternOfProject)) {
         console.log('project');
         var tempDOM2 = $.sectionlink.filter('[href="/work"]');
-        PI.openSection.apply(tempDOM2).done(PI.openProjectDetail.bind(tempDOM));
+        PI.goToSection.apply(tempDOM2).done(PI.openProjectDetail.bind(tempDOM));
       } else {
         if (url.match(urlPatternOfSection)) {
           console.log('section');
           var $tempDOM2 = $.sectionlink.filter('[href="' + url + '"]');
-          PI.openSection.apply($tempDOM2);
+          PI.goToSection.apply($tempDOM2);
         } else {
           console.log('home');
           PI.backToHome();
