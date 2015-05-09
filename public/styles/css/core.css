@@ -11,9 +11,10 @@
 }
 
 .wrapper-l {
-  position: static;
+  position: absolute;
   float: left;
   width: 100%;
+  min-height: 667px;
   height: 100%;
 }
 
@@ -65,12 +66,16 @@
   position: fixed !important;
 }
 
-.keepstate-to-home .wrapper-l {
-  position: fixed !important;
+.keepstate-to-main .wrapper-l {
+  position: absolute !important;
 }
 
 .keepstate-to-home .wrapper-r {
   position: absolute;
+}
+
+.keepstate-to-home .wrapper-l {
+  position: fixed !important;
 }
 
 .closebtn {
@@ -81,13 +86,6 @@
   display: none;
 }
 
-@media only screen and (max-width: 767px) {
-  .wrapper-l,
-  .wrapper-r {
-    -webkit-transition: -webkit-transform ease 1.2s;
-    transition: transform ease 1.2s;
-  }
-}
 @media only screen and (min-width: 768px) {
   .header-container,
   .navigation-container {

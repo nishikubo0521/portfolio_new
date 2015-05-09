@@ -42,9 +42,10 @@ $main-md-width: $header-md-width;
 }
 
 .wrapper-l{
-  position:static;
+  position:absolute;
   float: left;
   width: 100%;
+  min-height: 667px;
   height: 100%;
 }
 
@@ -96,12 +97,16 @@ $main-md-width: $header-md-width;
   position: fixed !important; //For main to be seen at the top while going to main;
 }
 
-.keepstate-to-home .wrapper-l {
-  position: fixed !important; //For home to be seen at the top while going back to home;
+.keepstate-to-main .wrapper-l {
+  position: absolute !important; //For main to be seen at the top while going to main;
 }
 
 .keepstate-to-home .wrapper-r{
   position: absolute;
+}
+
+.keepstate-to-home .wrapper-l {
+  position: fixed !important; //For home to be seen at the top while going back to home;
 }
 
 .closebtn {
@@ -114,8 +119,8 @@ $main-md-width: $header-md-width;
 @media #{$screen-xs-max} {
   .wrapper-l,
   .wrapper-r {
-    -webkit-transition: -webkit-transform ease 1.2s;
-    transition: transform ease 1.2s;
+    //-webkit-transition: -webkit-transform ease 1.2s;
+    //transition: transform ease 1.2s;
   }
 }
 @media #{$screen-sm-min} {
