@@ -84,8 +84,8 @@
 @media only screen and (max-width: 767px) {
   .wrapper-l,
   .wrapper-r {
-    -webkit-transition: -webkit-transform ease 1.5s;
-    transition: transform ease 1.5s;
+    -webkit-transition: -webkit-transform ease 1.2s;
+    transition: transform ease 1.2s;
   }
 }
 @media only screen and (min-width: 768px) {

@@ -114,8 +114,8 @@ $main-md-width: $header-md-width;
 @media #{$screen-xs-max} {
   .wrapper-l,
   .wrapper-r {
-    -webkit-transition: -webkit-transform ease 1.5s;
-    transition: transform ease 1.5s;
+    -webkit-transition: -webkit-transform ease 1.2s;
+    transition: transform ease 1.2s;
   }
 }
 @media #{$screen-sm-min} {

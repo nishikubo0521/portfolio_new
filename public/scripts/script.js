@@ -127,7 +127,7 @@ var PI = {
       setTimeout(function() {
         $.body
           .scrollTop(0)
-          .removeClass('keepstate-to-home'); //FIXME! this is because css styling not working in iphone
+          .removeClass('keepstate-to-home');
       }, $.animationDuration);
     }
 
