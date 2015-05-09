@@ -43,8 +43,13 @@
 */
 .wrapper-l,
 .wrapper-r {
+<<<<<<< HEAD
   -webkit-transition: -webkit-transform ease 5.5s;
   transition: transform ease 5.5s;
+=======
+  -webkit-transition: -webkit-transform ease 1.7s;
+  transition: transform ease 1.7s;
+>>>>>>> 73bd1a11a69607e6fdda0bb8fd9dbbbf5d10470c
 }
 
 .main-on .wrapper-r,
