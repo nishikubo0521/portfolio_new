@@ -101,14 +101,6 @@ $main-md-width: $header-md-width;
   position: fixed !important; //For main to be seen at the top while going to main;
 }
 
-.keepstate-to-main .wrapper-l {
-  position: absolute !important; //For main to be seen at the top while going to main;
-}
-
-.keepstate-to-home .wrapper{
-  position: fixed !important;
-}
-
 .keepstate-to-home .wrapper-r{
   position: absolute;
 }
@@ -124,13 +116,23 @@ $main-md-width: $header-md-width;
   z-index: 200;
   display:none;
 }
+
 @media #{$screen-xs-max} {
+  .keepstate-to-home .wrapper{
+    position: fixed !important;
+  }
+
+  .keepstate-to-main .wrapper-l {
+    position: absolute !important; //For main to be seen at the top while going to main;
+  }
+
   .wrapper-l{
     min-height: 667px;
   }
-}
-@media #{$screen-sm-min} {
 
+}
+
+@media #{$screen-sm-min} {
   .header-container,
   .navigation-container{
     float: left;
@@ -155,7 +157,6 @@ $main-md-width: $header-md-width;
 }
 
 @media #{$screen-md-min} {
-  
   .closebtn{
     display:none;
   }

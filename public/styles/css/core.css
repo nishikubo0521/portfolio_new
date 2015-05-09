@@ -69,14 +69,6 @@
   position: fixed !important;
 }
 
-.keepstate-to-main .wrapper-l {
-  position: absolute !important;
-}
-
-.keepstate-to-home .wrapper {
-  position: fixed !important;
-}
-
 .keepstate-to-home .wrapper-r {
   position: absolute;
 }
@@ -94,6 +86,14 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .keepstate-to-home .wrapper {
+    position: fixed !important;
+  }
+
+  .keepstate-to-main .wrapper-l {
+    position: absolute !important;
+  }
+
   .wrapper-l {
     min-height: 667px;
   }
