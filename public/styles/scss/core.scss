@@ -74,8 +74,8 @@ $main-md-width: $header-md-width;
 */
 .wrapper-l,
 .wrapper-r {
-  -webkit-transition: -webkit-transform ease 5.5s;
-  transition: transform ease 5.5s;
+  -webkit-transition: -webkit-transform ease .5s;
+  transition: transform ease .5s;
 }
 
 .main-on .wrapper-r,
@@ -111,7 +111,13 @@ $main-md-width: $header-md-width;
   z-index: 200;
   display:none;
 }
-
+@media #{$screen-xs-max} {
+  .wrapper-l,
+  .wrapper-r {
+    -webkit-transition: -webkit-transform ease 1.5s;
+    transition: transform ease 1.5s;
+  }
+}
 @media #{$screen-sm-min} {
 
   .header-container,
