@@ -6,7 +6,9 @@ var port = process.env.PORT || 8000;
 var json = require('./data.json'),
     projects = json.projects;
 
-///Initializes request information object and determines if the request is sent by AJAX
+/*
+* Initializes request information object and determines if the request is sent by AJAX
+*/
 var isAJAX = function(req, res, next) {
   // For debug
   req.log = "";
@@ -28,7 +30,9 @@ var isAJAX = function(req, res, next) {
   next();
 }
 
-//Add a requested section to request information object
+/*
+*Adds a requested section to request information object
+*/
 var sectionRequestHandler = function(req, res, next) {
   req.info.requestedPage = req.params.path;
   req.log += 'requestedPage: ' + req.info.requestedPage + '\n';
@@ -36,7 +40,9 @@ var sectionRequestHandler = function(req, res, next) {
   next();
 }
 
-//Add a requested project detail to request information object
+/*
+* Adds a requested project detail to request information object
+*/
 var projectRequestHandler = function(req, res, next) {
   req.info.requestedPage = 'work';
 
@@ -52,13 +58,15 @@ var projectRequestHandler = function(req, res, next) {
   next();
 }
 
-//Render content based on request information
+/*
+* Renders content based on request information
+*/
 var layout = function(req, res) {
   console.log(req.log)
   res.render('layout', req.info);
 }
 
-//Define a template engine to use
+//Defines a template engine to use
 app.set('views', process.env.PWD + "/views");
 app.set('view engine', 'ejs');
 
