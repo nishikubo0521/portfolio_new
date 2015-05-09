@@ -121,14 +121,16 @@ var PI = {
 
     if ($.body.hasClass('main-on')) {
       $.body
+        .css({position: 'fixed'})
         .addClass('keepstate-to-home')
         .removeClass('main-on');
 
       setTimeout(function() {
         $.body
+          .css({position: 'static'})
           .scrollTop(0)
           .removeClass('keepstate-to-home');
-      }, $.animationDuration + 7000);
+      }, $.animationDuration);
     }
 
     $.homelink.not('.closebtn').addClass('selected');
