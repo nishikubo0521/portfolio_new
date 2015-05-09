@@ -120,7 +120,6 @@ var PI = {
     }
 
     if ($.body.hasClass('main-on')) {
-      $('.wrapper-l').css({position: 'fixed'}); //FIXME! this is because css styling not working in iphone
       $.body
         .addClass('keepstate-to-home')
         .removeClass('main-on');
@@ -129,7 +128,6 @@ var PI = {
         $.body
           .scrollTop(0)
           .removeClass('keepstate-to-home'); //FIXME! this is because css styling not working in iphone
-        $('.wrapper-l').css({position: 'static'});
       }, $.animationDuration);
     }
 
