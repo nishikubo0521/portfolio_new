@@ -43,8 +43,8 @@
 */
 .wrapper-l,
 .wrapper-r {
-  -webkit-transition: -webkit-transform ease 1.0s;
-  transition: transform ease 1.0s;
+  -webkit-transition: -webkit-transform ease 5.0s;
+  transition: transform ease 5.0s;
 }
 
 .main-on .wrapper-r,
