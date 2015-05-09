@@ -126,9 +126,15 @@ var PI = {
 
       setTimeout(function() {
         $.body
-          .scrollTop(0)
-          .removeClass('keepstate-to-home');
+          .scrollTop(0);
+          //.removeClass('keepstate-to-home');
       }, $.animationDuration);
+
+      setTimeout(function() {
+        $.body
+          //.scrollTop(0)
+          .removeClass('keepstate-to-home');
+      }, $.animationDuration + 300);
     }
 
     $.homelink.not('.closebtn').addClass('selected');
