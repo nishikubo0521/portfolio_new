@@ -36,7 +36,7 @@ $main-md-width: $header-md-width;
 .wrapper{
   position: static;
   width:$wrapper-width;
-  min-height: 667px;
+  //min-height: 667px;
   height: 100vh;
   overflow-x: hidden;
 }
@@ -74,8 +74,8 @@ $main-md-width: $header-md-width;
 */
 .wrapper-l,
 .wrapper-r {
-  -webkit-transition: -webkit-transform ease 5.5s;
-  transition: transform ease 5.5s;
+  -webkit-transition: -webkit-transform ease .5s;
+  transition: transform ease .5s;
 }
 
 .main-on .wrapper-r,
