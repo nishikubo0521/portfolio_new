@@ -45,7 +45,7 @@ $main-md-width: $header-md-width;
   position:absolute;
   float: left;
   width: 100%;
-  min-height: 667px;
+  //min-height: 667px;
   height: 100%;
 }
 
@@ -87,6 +87,10 @@ $main-md-width: $header-md-width;
 
 .main-on .wrapper-r {
   position: absolute;
+}
+
+.main-on .wrapper-l {
+  position: fixed;
 }
 
 .main-on .closebtn{
