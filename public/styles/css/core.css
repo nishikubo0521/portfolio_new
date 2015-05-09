@@ -73,6 +73,10 @@
   position: absolute !important;
 }
 
+.keepstate-to-home .wrapper {
+  position: fixed !important;
+}
+
 .keepstate-to-home .wrapper-r {
   position: absolute;
 }

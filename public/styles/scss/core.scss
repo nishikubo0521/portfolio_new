@@ -105,6 +105,10 @@ $main-md-width: $header-md-width;
   position: absolute !important; //For main to be seen at the top while going to main;
 }
 
+.keepstate-to-home .wrapper{
+  position: fixed !important;
+}
+
 .keepstate-to-home .wrapper-r{
   position: absolute;
 }
