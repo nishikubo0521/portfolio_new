@@ -128,7 +128,7 @@ var PI = {
         $.body
           .scrollTop(0)
           .removeClass('keepstate-to-home');
-      }, $.animationDuration + 300);
+      }, $.animationDuration + 1900);
     }
 
     $.homelink.not('.closebtn').addClass('selected');
