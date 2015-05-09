@@ -89,6 +89,11 @@
   display: none;
 }
 
+@media only screen and (max-width: 767px) {
+  .wrapper-l {
+    min-height: 667px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .header-container,
   .navigation-container {
