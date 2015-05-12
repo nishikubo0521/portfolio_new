@@ -35,7 +35,7 @@ $main-md-width: $header-md-width;
 // From mobile Styling
 .wrapper{
   position: static;
-  width:$wrapper-width;
+  width: $wrapper-width;
   min-height: 667px;
   height: 100vh;
   overflow-x: hidden;
@@ -195,7 +195,6 @@ $main-md-width: $header-md-width;
   .main-on .wrapper-l{
     -webkit-transform: translateX(-$main-md-width) !important;
     transform: translateX(-$main-md-width) !important;
-    //position:fixed;
   }
   
   .main-on .wrapper-r{
